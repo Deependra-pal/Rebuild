@@ -71,7 +71,7 @@ export default function Navbar() {
             <img 
               src="/logo/1782391827071-a1ef33c7-4e28-4178-ae95-96525ad734f0.png" 
               alt="Squeako Logo" 
-              className="w-[120px] h-[36px] object-contain invert brightness-200" 
+              className="w-[145px] h-[44px] object-contain scale-[1.1]" 
             />
           </Link>
 
@@ -104,31 +104,39 @@ export default function Navbar() {
                 </svg>
               </button>
 
-              {/* Product Mega Dropdown Panel */}
               <div
-                className={`absolute top-[calc(100%+8px)] -left-[120px] w-[880px] bg-bg-card border border-border rounded-xl shadow-lg p-6 transition-all duration-200 z-[99] ${
+                className={`absolute top-[calc(100%+8px)] left-0 w-[820px] bg-bg-card border border-border rounded-xl shadow-lg py-5 px-6 transition-all duration-200 z-[99] ${
                   openMega === 'product'
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-1.5 pointer-events-none'
                 }`}
               >
-                <div className="grid grid-cols-[1.1fr_1.1fr_1.1fr_0.9fr] gap-6 text-left">
+                {/* Hover Bridge */}
+                <div className="absolute -top-3 left-0 right-0 h-3 bg-transparent" />
+                <div className="grid grid-cols-[1fr_1fr_1fr_1.1fr] gap-5 text-left mb-5">
                   {/* Communicate */}
                   <div>
                     <h6 className="font-heading font-extrabold text-[0.68rem] tracking-[0.1em] uppercase text-text-muted mb-3">Communicate</h6>
-                    <div className="flex flex-col gap-1.5">
-                      <Link className="flex gap-3 items-start p-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                    <div className="flex flex-col gap-1">
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
                         <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">💬</span>
                         <div>
-                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Chat & Channels</b>
-                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Direct & group rooms</span>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Chat & channels</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">1:1, groups & threads</span>
                         </div>
                       </Link>
-                      <Link className="flex gap-3 items-start p-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
-                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">🎤</span>
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">🎙️</span>
                         <div>
-                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Audio & Video Clips</b>
-                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Asynchronous updates</span>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Voice & video messages</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Async updates</span>
+                        </div>
+                      </Link>
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">🔍</span>
+                        <div>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Search</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Find anything, fast</span>
                         </div>
                       </Link>
                     </div>
@@ -137,19 +145,26 @@ export default function Navbar() {
                   {/* Meet */}
                   <div>
                     <h6 className="font-heading font-extrabold text-[0.68rem] tracking-[0.1em] uppercase text-text-muted mb-3">Meet</h6>
-                    <div className="flex flex-col gap-1.5">
-                      <Link className="flex gap-3 items-start p-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                    <div className="flex flex-col gap-1">
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
                         <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">📹</span>
                         <div>
-                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">HD Conferences</b>
-                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">With screen shares</span>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Audio & video calls</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">With screen share</span>
                         </div>
                       </Link>
-                      <Link className="flex gap-3 items-start p-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
-                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">⏰</span>
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">📅</span>
                         <div>
-                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Reminders</b>
-                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Never miss Standup</span>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Meetings & reminders</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Recurring too</span>
+                        </div>
+                      </Link>
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">🖥️</span>
+                        <div>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Recording</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Recap & transcripts</span>
                         </div>
                       </Link>
                     </div>
@@ -157,37 +172,73 @@ export default function Navbar() {
 
                   {/* Organize */}
                   <div>
-                    <h6 className="font-heading font-extrabold text-[0.68rem] tracking-[0.1em] uppercase text-text-muted mb-3">Organize</h6>
-                    <div className="flex flex-col gap-1.5">
-                      <Link className="flex gap-3 items-start p-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                    <h6 className="font-heading font-extrabold text-[0.68rem] tracking-[0.1em] uppercase text-text-muted mb-3">Organise</h6>
+                    <div className="flex flex-col gap-1">
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
                         <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">✅</span>
                         <div>
-                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Task Tracker</b>
-                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Turn chats to tasks</span>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Tasks & to-dos</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">From any message</span>
                         </div>
                       </Link>
-                      <Link className="flex gap-3 items-start p-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
+                        <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">🕒</span>
+                        <div>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Presence & status</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Incl. on-break</span>
+                        </div>
+                      </Link>
+                      <Link className="flex gap-3 items-start py-1.5 px-2 rounded-lg hover:bg-hover-overlay transition-colors" href="/features" onClick={handleLinkClick}>
                         <span className="w-7 h-7 rounded bg-bg-surface text-text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold">📊</span>
                         <div>
-                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Live Org Chart</b>
-                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Dynamic team trees</span>
+                          <b className="font-heading font-bold text-[0.84rem] block leading-tight text-text-primary">Org hierarchy</b>
+                          <span className="text-[0.72rem] text-text-secondary block mt-0.5 font-body">Live reporting chart</span>
                         </div>
                       </Link>
                     </div>
                   </div>
 
-                  {/* Compliance */}
-                  <div className="bg-bg-surface border border-border rounded-lg p-4 flex flex-col justify-between">
-                    <div>
-                      <b className="font-heading font-bold text-[0.82rem] text-text-primary block mb-1">GST & Data Residency</b>
-                      <span className="text-[0.7rem] text-text-secondary font-body leading-normal block">
-                        Fully aligned with India's DPDP Act and billed locally in INR.
-                      </span>
+                  {/* Security & Trust */}
+                  <div>
+                    <h6 className="font-heading font-extrabold text-[0.68rem] tracking-[0.1em] uppercase text-text-muted mb-2.5">Security & Trust</h6>
+                    <div className="flex items-center gap-1.5">
+                      <img 
+                        src="/trusted-icons/Mask-group-5.webp" 
+                        alt="SOC 2" 
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      />
+                      <img 
+                        src="/trusted-icons/Mask-group-6.webp" 
+                        alt="VPAT Compliance" 
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      />
+                      <img 
+                        src="/trusted-icons/Mask-group.webp" 
+                        alt="DPDP Act" 
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      />
+                      <img 
+                        src="/trusted-icons/Mask-group-1.webp" 
+                        alt="GDPR" 
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      />
                     </div>
-                    <Link href="/security" onClick={handleLinkClick} className="text-accent font-heading font-semibold text-[0.76rem] hover:underline block mt-3">
-                      Security Docs &rarr;
-                    </Link>
                   </div>
+                </div>
+
+                {/* Bottom Bar: Client & guest access */}
+                <div className="bg-[#111827]/40 border border-border/80 rounded-lg py-4 px-5 mb-4 text-left">
+                  <b className="font-heading font-bold text-[0.92rem] text-text-primary block mb-1">Client & guest access</b>
+                  <span className="text-[0.78rem] text-text-secondary font-body leading-normal block">
+                    Invite clients into specific groups &mdash; they only see what you share.
+                  </span>
+                </div>
+
+                {/* Footer Link */}
+                <div className="text-left pl-1">
+                  <Link href="/features" onClick={handleLinkClick} className="text-text-primary font-heading font-bold text-[0.84rem] hover:underline flex items-center gap-1.5">
+                    See all features &rarr;
+                  </Link>
                 </div>
               </div>
             </div>
@@ -225,6 +276,8 @@ export default function Navbar() {
                     : 'opacity-0 invisible translate-y-1.5 pointer-events-none'
                 }`}
               >
+                {/* Hover Bridge */}
+                <div className="absolute -top-3 left-0 right-0 h-3 bg-transparent" />
                 <div className="grid grid-cols-2 gap-5 text-left">
                   <div>
                     <h6 className="font-heading font-extrabold text-[0.66rem] tracking-[0.1em] uppercase text-text-muted mb-2">By Team</h6>

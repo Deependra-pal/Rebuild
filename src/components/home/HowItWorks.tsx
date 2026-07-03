@@ -236,24 +236,20 @@ export default function HowItWorks() {
                 return (
                   <div
                     key={step.num}
-                    className={`flex gap-4 items-start transition-all duration-300 ${
-                      isActive ? 'opacity-100 scale-[1.04]' : 'opacity-40'
-                    }`}
+                    className={`flex gap-4 items-start transition-all duration-300 ${isActive ? 'opacity-100 scale-[1.04]' : 'opacity-40'
+                      }`}
                   >
-                    <div className={`w-6.5 h-6.5 rounded-full flex items-center justify-center font-heading font-bold text-[0.78rem] transition-all duration-300 ${
-                      isActive ? 'bg-primary text-white font-black shadow-focus' : 'bg-bg-card border border-border text-text-secondary'
-                    }`}>
+                    <div className={`w-6.5 h-6.5 rounded-full flex items-center justify-center font-heading font-bold text-[0.78rem] transition-all duration-300 ${isActive ? 'bg-primary text-white font-black shadow-focus' : 'bg-bg-card border border-border text-text-secondary'
+                      }`}>
                       {step.num}
                     </div>
                     <div>
-                      <span className={`font-heading text-[0.66rem] tracking-[0.08em] uppercase block mb-0.5 ${
-                        isActive ? 'text-primary font-bold' : 'text-text-muted'
-                      }`}>
+                      <span className={`font-heading text-[0.66rem] tracking-[0.08em] uppercase block mb-0.5 ${isActive ? 'text-primary font-bold' : 'text-text-muted'
+                        }`}>
                         {step.tag}
                       </span>
-                      <h4 className={`font-heading text-[0.98rem] transition-colors ${
-                        isActive ? 'text-text-primary font-bold' : 'text-text-secondary font-medium'
-                      }`}>
+                      <h4 className={`font-heading text-[0.98rem] transition-colors ${isActive ? 'text-text-primary font-bold' : 'text-text-secondary font-medium'
+                        }`}>
                         {step.title}
                       </h4>
                     </div>

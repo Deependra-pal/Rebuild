@@ -119,11 +119,10 @@ export default function FeatureTabs() {
               <button
                 key={tab.id}
                 onClick={() => setActiveFeatureTab(tab.id)}
-                className={`flex items-center gap-2 py-2 px-5 rounded-full font-heading font-semibold text-[0.86rem] cursor-pointer transition-all duration-150 shrink-0 whitespace-nowrap ${
-                  isActive
+                className={`flex items-center gap-2 py-2 px-5 rounded-full font-heading font-semibold text-[0.86rem] cursor-pointer transition-all duration-150 shrink-0 whitespace-nowrap ${isActive
                     ? 'bg-primary text-white shadow-sm'
                     : 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-hover-overlay'
-                }`}
+                  }`}
               >
                 <span>{tab.icon}</span>
                 {tab.label}
@@ -133,8 +132,8 @@ export default function FeatureTabs() {
         </div>
 
         {/* Dynamic Display Panel Container */}
-        <div 
-          ref={panelRef} 
+        <div
+          ref={panelRef}
           className="feature-fade-in opacity-0 w-full bg-bg-card border border-border rounded-xl p-6 lg:p-10 min-h-[380px] shadow-lg flex items-center justify-center"
         >
           {/* 1. CHAT PANEL */}

@@ -99,7 +99,7 @@ export default function WhyTeamsSwitch() {
   return (
     <section ref={containerRef} className="bg-bg-base py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10">
-        
+
         {/* Head */}
         <div className="max-w-[800px] mx-auto mb-16 text-center flex flex-col items-center">
           <Eyebrow>Why teams switch</Eyebrow>

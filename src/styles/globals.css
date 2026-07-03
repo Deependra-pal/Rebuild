@@ -2,13 +2,19 @@
 
 @theme {
   /* Squeako Semantic Tokens */
-  --color-bg-base: #08090C;       /* Deep Charcoal Base background */
-  --color-bg-surface: #111318;    /* Primary dark surface */
-  --color-bg-card: #161920;       /* Secondary card surface */
-  --color-bg-elevated: #1C1F2B;   /* Elevated surface */
-  --color-bg-hover: #222634;      /* Interactive Hover Surface */
-  
-  --color-border: rgba(255, 255, 255, 0.05); /* Hairline borders */
+  --color-bg-base: #08090C;
+  /* Deep Charcoal Base background */
+  --color-bg-surface: #111318;
+  /* Primary dark surface */
+  --color-bg-card: #161920;
+  /* Secondary card surface */
+  --color-bg-elevated: #1C1F2B;
+  /* Elevated surface */
+  --color-bg-hover: #222634;
+  /* Interactive Hover Surface */
+
+  --color-border: rgba(255, 255, 255, 0.05);
+  /* Hairline borders */
   --color-border-hover: rgba(255, 255, 255, 0.12);
   --color-border-focus: #0A84FF;
 
@@ -16,14 +22,17 @@
   --color-text-secondary: #8E939E;
   --color-text-muted: #626B7A;
 
-  --color-primary: #0A84FF;       /* Deep Blue Brand Color */
+  --color-primary: #0A84FF;
+  /* Deep Blue Brand Color */
   --color-primary-hover: #0066FF;
   --color-primary-active: #0052CC;
   --color-primary-wash: rgba(10, 132, 255, 0.06);
 
-  --color-accent: #30D5C8;        /* Emerald/Teal Accent */
-  
-  --color-success: #0CE59E;       /* Emerald indicators */
+  --color-accent: #30D5C8;
+  /* Emerald/Teal Accent */
+
+  --color-success: #0CE59E;
+  /* Emerald indicators */
   --color-warning: #FFB703;
   --color-error: #FF4D4D;
   --color-info: #0A84FF;
@@ -561,15 +570,27 @@ main#main textarea::placeholder {
 main#main input:focus,
 main#main select:focus,
 main#main textarea:focus {
-  border-color: #FAFD8F !important;
+  border-color: #FFFF !important;
   box-shadow: 0 0 0 3px rgba(250, 253, 143, 0.25) !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-/* Footer newsletter input focus border override */
+/* Footer newsletter input border overrides */
+footer input {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 footer input:focus {
-  border-color: #6ED190 !important;
+  border-bottom-color: #0A84FF !important;
   outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Footer text and icon color overrides */
@@ -1317,13 +1338,15 @@ main#main .multiple-views-section {
 
 /* Eyebrow override */
 main#main .multiple-views-section .eyebrow {
-  color: #475569 !important; /* Muted Slate Gray instead of green */
+  color: #475569 !important;
+  /* Muted Slate Gray instead of green */
 }
 
 /* H2 & H3 overrides */
 main#main .multiple-views-section h2,
 main#main .multiple-views-section h3 {
-  color: #090D0C !important; /* High contrast dark ink */
+  color: #090D0C !important;
+  /* High contrast dark ink */
 }
 
 /* General text-ink class override inside this section */
@@ -1335,30 +1358,38 @@ main#main .multiple-views-section .text-ink * {
 /* General text-muted class override inside this section */
 main#main .multiple-views-section .text-muted,
 main#main .multiple-views-section .text-muted * {
-  color: #475569 !important; /* Slate-600 for soft but very visible descriptions */
+  color: #475569 !important;
+  /* Slate-600 for soft but very visible descriptions */
 }
 
 /* General P overrides */
 main#main .multiple-views-section p {
-  color: #475569 !important; /* Legible slate gray */
+  color: #475569 !important;
+  /* Legible slate gray */
 }
 
 /* List Items text overrides */
 main#main .multiple-views-section li {
-  color: #1F2937 !important; /* Dark text for list items */
+  color: #1F2937 !important;
+  /* Dark text for list items */
 }
 
 /* Checkmark badge overrides */
 main#main .multiple-views-section .bg-mint-wash {
-  background-color: #E6F4EA !important; /* Soft mint background */
-  color: #137333 !important; /* Dark green text */
+  background-color: #E6F4EA !important;
+  /* Soft mint background */
+  color: #137333 !important;
+  /* Dark green text */
 }
 
 /* Inactive Tab Button overrides */
 main#main .multiple-views-section .views-tab-btn.bg-white {
-  background-color: #FFFFFF !important; /* Pure white background */
-  color: #475569 !important; /* Dark slate text */
-  border-color: #CBD5E1 !important; /* Clean slate-300 border */
+  background-color: #FFFFFF !important;
+  /* Pure white background */
+  color: #475569 !important;
+  /* Dark slate text */
+  border-color: #CBD5E1 !important;
+  /* Clean slate-300 border */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -1434,7 +1465,8 @@ main#main .multiple-views-section .bg-paper {
 
 /* Kanban Board column header text override */
 main#main .multiple-views-section .bg-paper h6.text-muted {
-  color: #334155 !important; /* Dark Slate header text for high contrast */
+  color: #334155 !important;
+  /* Dark Slate header text for high contrast */
 }
 
 main#main .multiple-views-section .bg-paper h6 span {
@@ -1454,7 +1486,8 @@ main#main .multiple-views-section .bg-paper .bg-white b.text-ink {
 /* Calendar item badges text overrides */
 main#main .multiple-views-section span.bg-\[\#D9E38A\] {
   color: #166534 !important;
-  background-color: #E6F4EA !important; /* Cleaner soft green */
+  background-color: #E6F4EA !important;
+  /* Cleaner soft green */
   border: 1px solid rgba(22, 101, 52, 0.15) !important;
 }
 
@@ -1480,7 +1513,8 @@ main#main .timeline-grid-mobile div.bg-white *:not(.font-space-mono) {
    ========================================== */
 /* Eyebrow & Headings overrides */
 main#main .feature-tabs-light-section .eyebrow {
-  color: #13261C !important; /* Deep dark forest green */
+  color: #13261C !important;
+  /* Deep dark forest green */
 }
 
 main#main .feature-tabs-light-section h2 {
@@ -1488,7 +1522,8 @@ main#main .feature-tabs-light-section h2 {
 }
 
 main#main .feature-tabs-light-section p.text-muted {
-  color: #2D4C3A !important; /* Muted forest green */
+  color: #2D4C3A !important;
+  /* Muted forest green */
 }
 
 /* Sidebar overrides */
@@ -1509,13 +1544,15 @@ main#main .feature-tabs-light-section .feature-tab-panel {
 main#main .feature-tabs-light-section .feature-tab-panel h3,
 main#main .feature-tabs-light-section .feature-tab-panel .text-ink,
 main#main .feature-tabs-light-section .feature-tab-panel .text-ink * {
-  color: #13261C !important; /* Deep dark forest green text for high readability */
+  color: #13261C !important;
+  /* Deep dark forest green text for high readability */
 }
 
 main#main .feature-tabs-light-section .feature-tab-panel p,
 main#main .feature-tabs-light-section .feature-tab-panel .text-muted,
 main#main .feature-tabs-light-section .feature-tab-panel .text-muted * {
-  color: #475569 !important; /* Muted Slate Gray */
+  color: #475569 !important;
+  /* Muted Slate Gray */
 }
 
 main#main .feature-tabs-light-section .feature-tab-panel li {
@@ -1524,8 +1561,10 @@ main#main .feature-tabs-light-section .feature-tab-panel li {
 
 /* Bullet checkmark icon badge inside white panel */
 main#main .feature-tabs-light-section .feature-tab-panel .bg-mint-wash {
-  background-color: #E6F4EA !important; /* Soft green */
-  color: #137333 !important; /* Dark green */
+  background-color: #E6F4EA !important;
+  /* Soft green */
+  color: #137333 !important;
+  /* Dark green */
 }
 
 /* Soft grey wrapper for visual mockup card grids inside white panel */
@@ -1591,36 +1630,45 @@ main#main .packed-features-section::before {
 
 /* Eyebrow & Headings overrides using brand colors */
 main#main .packed-features-section .eyebrow {
-  color: #444D36 !important; /* Brand Olive Green (var(--violet)) */
+  color: #444D36 !important;
+  /* Brand Olive Green (var(--violet)) */
 }
 
 main#main .packed-features-section h2 {
-  color: #090D0C !important; /* Brand Charcoal Black */
+  color: #090D0C !important;
+  /* Brand Charcoal Black */
 }
 
 main#main .packed-features-section p.text-muted {
-  color: rgba(68, 77, 54, 0.75) !important; /* Brand Olive Green with opacity */
+  color: rgba(68, 77, 54, 0.75) !important;
+  /* Brand Olive Green with opacity */
 }
 
 /* Glassmorphic card styling inside the packed features grid (now white cards) */
 main#main .packed-features-section .pack-card-item div.bg-white {
   background-color: #FFFFFF !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
-  border-radius: 20px !important; /* Premium larger rounded corners */
+  border-radius: 20px !important;
+  /* Premium larger rounded corners */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01) !important;
-  padding: 24px 20px !important; /* Spacious padding */
+  padding: 24px 20px !important;
+  /* Spacious padding */
   display: flex !important;
-  align-items: center !important; /* Vertically center icon and text */
-  gap: 16px !important; /* Refined spacing */
+  align-items: center !important;
+  /* Vertically center icon and text */
+  gap: 16px !important;
+  /* Refined spacing */
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Hover glow effect for the cards using Brand Mint Green */
 main#main .packed-features-section .pack-card-item div.bg-white:hover {
   background-color: #FFFFFF !important;
-  border-color: rgba(22, 209, 150, 0.35) !important; /* Brand Mint Deep */
+  border-color: rgba(22, 209, 150, 0.35) !important;
+  /* Brand Mint Deep */
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06), 0 0 12px rgba(22, 209, 150, 0.15) !important;
-  transform: translateY(-6px) !important; /* Pronounced hover float */
+  transform: translateY(-6px) !important;
+  /* Pronounced hover float */
 }
 
 /* Card internal elements color and weight overrides */
@@ -1635,8 +1683,10 @@ main#main .packed-features-section .pack-card-item span.text-muted {
 
 /* Brand Mint Green icon containers */
 main#main .packed-features-section .pack-card-item span.bg-mint-wash {
-  background-color: rgba(22, 209, 150, 0.10) !important; /* Brand Mint Deep wash */
-  color: #1FA968 !important; /* Brand Mint */
+  background-color: rgba(22, 209, 150, 0.10) !important;
+  /* Brand Mint Deep wash */
+  color: #1FA968 !important;
+  /* Brand Mint */
   border: 1px solid rgba(31, 169, 104, 0.15) !important;
 }
 
@@ -1645,15 +1695,18 @@ main#main .packed-features-section .pack-card-item span.bg-mint-wash {
    ========================================== */
 /* Eyebrow & Headings overrides */
 main#main .ai-light-section .eyebrow {
-  color: #444D36 !important; /* Brand Olive Green (var(--violet)) */
+  color: #444D36 !important;
+  /* Brand Olive Green (var(--violet)) */
 }
 
 main#main .ai-light-section h2 {
-  color: #090D0C !important; /* Brand Charcoal Black */
+  color: #090D0C !important;
+  /* Brand Charcoal Black */
 }
 
 main#main .ai-light-section p.text-muted {
-  color: rgba(68, 77, 54, 0.75) !important; /* Brand Olive Green with opacity */
+  color: rgba(68, 77, 54, 0.75) !important;
+  /* Brand Olive Green with opacity */
 }
 
 /* White cards override inside the AI section grid */
@@ -1686,8 +1739,10 @@ main#main .ai-light-section .ai-card-item p.text-muted {
 
 /* Icon containers inside AI section */
 main#main .ai-light-section .ai-card-item span.bg-mint-wash {
-  background-color: rgba(22, 209, 150, 0.10) !important; /* Brand Mint Deep wash */
-  color: #1FA968 !important; /* Brand Mint */
+  background-color: rgba(22, 209, 150, 0.10) !important;
+  /* Brand Mint Deep wash */
+  color: #1FA968 !important;
+  /* Brand Mint */
   border: 1px solid rgba(31, 169, 104, 0.15) !important;
 }
 

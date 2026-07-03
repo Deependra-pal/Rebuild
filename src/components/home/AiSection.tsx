@@ -43,7 +43,7 @@ export default function AiSection() {
       <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[500px] h-[500px] rounded-full z-0 pointer-events-none opacity-[0.05] blur-[120px] bg-primary"></div>
 
       <div className="max-w-[1200px] mx-auto relative z-10">
-        
+
         {/* Head */}
         <div className="max-w-[800px] mx-auto mb-16 text-center flex flex-col items-center">
           <Eyebrow>Meet Squeako AI</Eyebrow>

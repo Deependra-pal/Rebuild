@@ -32,9 +32,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-bg-base py-6 px-4 md:px-8 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[300px] rounded-full z-0 pointer-events-none opacity-[0.02] blur-[120px] bg-primary"></div>
+    <footer className="bg-transparent pt-0 pb-6 px-4 md:px-8 relative overflow-hidden">
+      {/* Subtle bottom ambient glow */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[300px] rounded-full z-0 pointer-events-none opacity-[0.03] blur-[120px] bg-primary"></div>
 
       <div className="max-w-[1200px] mx-auto bg-bg-surface border border-border/80 rounded-[24px] py-6 px-6 md:py-8 md:px-10 relative z-10">
 

@@ -37,12 +37,12 @@ export default function SecurityTeaser() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-bg-card py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section ref={containerRef} className="bg-transparent pt-10 pb-20 md:pt-12 md:pb-32 px-6 md:px-8 relative overflow-hidden">
       {/* Background glow decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full z-0 pointer-events-none opacity-20 blur-[130px] bg-gradient-to-r from-primary to-accent"></div>
 
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center">
-        
+
         {/* Head */}
         <div className="max-w-[800px] mx-auto mb-12 text-center flex flex-col items-center">
           <Eyebrow>Safe & compliant</Eyebrow>

@@ -12,16 +12,16 @@ export default function ProblemStory() {
   ];
 
   return (
-    <section className="bg-bg-base py-20 md:py-32 px-6 md:px-8 relative border-b border-border overflow-hidden">
+    <section className="bg-transparent pt-12 pb-24 md:pt-16 md:pb-32 px-6 md:px-8 relative overflow-hidden">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 left-[-10%] -translate-y-1/2 w-[600px] h-[600px] rounded-full z-0 pointer-events-none opacity-[0.06] blur-[120px] bg-primary"></div>
 
       <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
-        
+
         {/* Left Column: Problem Narrative */}
         <div className="flex flex-col text-left">
           <Eyebrow>The hidden tool tax</Eyebrow>
-          
+
           <h2 className="font-heading font-extrabold text-[clamp(1.8rem,3.8vw,2.6rem)] leading-[1.15] tracking-[-0.02em] text-text-primary mt-4 mb-6">
             You're paying a tax just to talk to your own team.
           </h2>
@@ -72,7 +72,7 @@ export default function ProblemStory() {
               Legacy Stack
             </span>
             <h4 className="font-heading text-[0.92rem] font-bold text-text-secondary mb-4">Fragmented Tools (Per User/Mo)</h4>
-            
+
             <div className="flex flex-col gap-2.5">
               {legacyStack.map((tool) => (
                 <div key={tool.name} className="flex justify-between items-center py-2 border-b border-border/40 last:border-0">

@@ -38,7 +38,7 @@ export default function AiSection() {
   ];
 
   return (
-    <section className="bg-bg-base py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section className="bg-transparent py-20 md:py-32 px-6 md:px-8 relative overflow-hidden">
       {/* Background Radial Glow */}
       <div className="absolute top-1/2 right-[-10%] -translate-y-1/2 w-[500px] h-[500px] rounded-full z-0 pointer-events-none opacity-[0.05] blur-[120px] bg-primary"></div>
 

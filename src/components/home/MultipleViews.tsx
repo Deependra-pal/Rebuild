@@ -87,7 +87,7 @@ export default function MultipleViews() {
   ];
 
   return (
-    <section ref={containerRef} className="bg-bg-base py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section ref={containerRef} className="bg-transparent py-20 md:py-32 px-6 md:px-8 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10">
 
         {/* Head */}
@@ -110,8 +110,8 @@ export default function MultipleViews() {
                 key={tab.id}
                 onClick={() => setActiveViewTab(tab.id)}
                 className={`flex items-center gap-2 py-2 px-5 rounded-full font-heading font-semibold text-[0.86rem] cursor-pointer transition-all duration-150 shrink-0 whitespace-nowrap ${isActive
-                    ? 'bg-primary text-white shadow-sm'
-                    : 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-hover-overlay'
+                  ? 'bg-primary text-white shadow-sm'
+                  : 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-hover-overlay'
                   }`}
               >
                 <span>{tab.icon}</span>

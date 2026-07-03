@@ -32,9 +32,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={heroRef} className="bg-bg-base relative pt-20 pb-28 md:pt-28 md:pb-36 px-6 md:px-8 overflow-hidden border-b border-border">
-      {/* Background Radial Glow */}
-      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[900px] h-[400px] rounded-full z-0 pointer-events-none opacity-20 blur-[130px] bg-gradient-to-r from-primary to-accent"></div>
+    <section ref={heroRef} className="bg-transparent relative pt-24 pb-8 md:pt-32 md:pb-12 px-6 md:px-8 overflow-hidden">
+      {/* Hero local glow — secondary depth layer under the page-level Zone 1 crown */}
+      <div className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full z-0 pointer-events-none blur-[80px]" style={{background: 'radial-gradient(ellipse, rgba(10,132,255,0.1) 0%, rgba(48,213,200,0.03) 50%, transparent 70%)'}}></div>
 
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center text-center">
         {/* Localization trust badge */}
@@ -57,18 +57,18 @@ export default function Hero() {
 
         {/* Action CTAs */}
         <div className="hero-fade-in opacity-0 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-6">
-          <Button 
-            href="/contact" 
-            variant="primary" 
-            size="lg" 
+          <Button
+            href="/contact"
+            variant="primary"
+            size="lg"
             className="w-full sm:w-auto !bg-primary hover:!bg-primary/90 active:!bg-primary/80 !text-white !shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 border-0"
           >
             Start free sandbox trial
           </Button>
-          <Button 
-            href="/contact" 
-            variant="ghost" 
-            size="lg" 
+          <Button
+            href="/contact"
+            variant="ghost"
+            size="lg"
             className="w-full sm:w-auto !border-border !text-text-primary hover:!bg-bg-hover"
           >
             Book a migration call
@@ -88,8 +88,8 @@ export default function Hero() {
         <div className="relative w-full max-w-[1040px] mt-4 z-10">
           {/* Ambient glow behind console */}
           <div className="absolute inset-0 rounded-xl pointer-events-none opacity-[0.06] blur-[60px] bg-gradient-to-r from-primary to-accent"></div>
-          
-          <div 
+
+          <div
             ref={consoleRef}
             className="w-full bg-bg-surface border border-border rounded-xl shadow-lg overflow-hidden opacity-0 relative z-10"
           >
@@ -104,109 +104,109 @@ export default function Hero() {
               <div className="w-[44px]"></div>
             </div>
 
-          {/* Console inner layout */}
-          <div className="grid grid-cols-[200px_1fr] h-[480px] text-left text-text-primary">
-            {/* Console Sidebar */}
-            <div className="bg-bg-surface border-r border-border p-4 flex flex-col justify-between">
-              <div className="flex flex-col gap-5">
-                {/* Workspace Title */}
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded bg-primary-wash text-primary grid place-items-center text-[0.8rem] font-black font-heading">S</div>
-                  <b className="font-heading text-[0.88rem] leading-none text-text-primary">Squeako HQ</b>
-                </div>
+            {/* Console inner layout */}
+            <div className="grid grid-cols-[200px_1fr] h-[480px] text-left text-text-primary">
+              {/* Console Sidebar */}
+              <div className="bg-bg-surface border-r border-border p-4 flex flex-col justify-between">
+                <div className="flex flex-col gap-5">
+                  {/* Workspace Title */}
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded bg-primary-wash text-primary grid place-items-center text-[0.8rem] font-black font-heading">S</div>
+                    <b className="font-heading text-[0.88rem] leading-none text-text-primary">Squeako HQ</b>
+                  </div>
 
-                {/* Navigation Items */}
-                <div className="flex flex-col gap-1.5">
-                  <div className="flex items-center gap-2 px-2 py-1.5 rounded bg-bg-hover text-[0.84rem] font-semibold text-primary">
-                    <span>💬</span> Channels
-                  </div>
-                  <div className="text-text-secondary text-[0.84rem] pl-7 flex flex-col gap-2 font-body">
-                    <span># general</span>
-                    <span># engineering</span>
-                    <span># product-updates</span>
-                  </div>
-                  <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary mt-1">
-                    <span>📹</span> Video Meetings
-                  </div>
-                  <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary">
-                    <span>✅</span> Tasks & To-dos
-                  </div>
-                  <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary">
-                    <span>📊</span> Live Org Chart
-                  </div>
-                </div>
-              </div>
-
-              {/* User Identity Profile */}
-              <div className="flex items-center gap-2 pt-3 border-t border-border">
-                <span className="w-7 h-7 rounded-full bg-primary-wash text-primary text-[0.78rem] font-bold grid place-items-center flex-none font-heading">AK</span>
-                <div className="flex flex-col min-w-0">
-                  <span className="font-heading text-[0.82rem] font-bold truncate">Aditya Kumar</span>
-                  <span className="text-[0.68rem] text-text-muted leading-none block mt-0.5">Admin · Online</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Console Content Window (Chat + Threads Preview) */}
-            <div className="bg-bg-base p-5 flex flex-col justify-between">
-              <div className="flex flex-col gap-5 overflow-y-auto">
-                {/* Header */}
-                <div className="flex items-center justify-between border-b border-border pb-3">
-                  <div>
-                    <h3 className="font-heading text-[0.95rem] font-extrabold text-text-primary"># general</h3>
-                    <p className="text-text-secondary text-[0.76rem] font-body mt-0.5">Company-wide announcements and updates</p>
-                  </div>
-                  <span className="text-[0.76rem] text-primary font-bold bg-primary-wash px-2.5 py-1 rounded-full">12 Members Online</span>
-                </div>
-
-                {/* Chat Feed */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex gap-3">
-                    <span className="w-8 h-8 rounded-full bg-bg-surface border border-border text-text-primary font-bold text-[0.84rem] grid place-items-center flex-none font-heading">RM</span>
-                    <div className="flex flex-col">
-                      <div className="flex items-baseline gap-2">
-                        <b className="font-heading text-[0.86rem] font-bold">Rohan Mehta</b>
-                        <span className="text-text-muted text-[0.68rem] font-body">11:24 AM</span>
-                      </div>
-                      <p className="text-text-secondary text-[0.88rem] mt-1 leading-relaxed font-body">
-                        Hey team, did we align on the GST invoice format for next month's billing cycle? 
-                      </p>
+                  {/* Navigation Items */}
+                  <div className="flex flex-col gap-1.5">
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded bg-bg-hover text-[0.84rem] font-semibold text-primary">
+                      <span>💬</span> Channels
                     </div>
-                  </div>
-
-                  <div className="flex gap-3 bg-primary-wash/40 p-3 rounded-lg border border-primary/10">
-                    <span className="w-8 h-8 rounded-full bg-primary-wash text-primary font-bold text-[0.84rem] grid place-items-center flex-none font-heading">AK</span>
-                    <div className="flex flex-col">
-                      <div className="flex items-baseline gap-2">
-                        <b className="font-heading text-[0.86rem] font-bold text-primary">Aditya Kumar</b>
-                        <span className="text-text-muted text-[0.68rem] font-body">11:26 AM</span>
-                      </div>
-                      <p className="text-text-secondary text-[0.88rem] mt-1 leading-relaxed font-body">
-                        Yes! Resolved. We have configured direct GST invoicing inside Squeako's growth panel. 
-                        I've also created a task for the finance team to audit the INR transaction accounts. 
-                      </p>
-                      <div className="flex gap-2.5 mt-2.5">
-                        <span className="inline-flex items-center gap-1.5 text-[0.75rem] font-bold text-primary bg-primary-wash px-2 py-0.5 rounded border border-primary/20">
-                          ✅ Task: Audit INR Accounts (Assigned to Finance)
-                        </span>
-                      </div>
+                    <div className="text-text-secondary text-[0.84rem] pl-7 flex flex-col gap-2 font-body">
+                      <span># general</span>
+                      <span># engineering</span>
+                      <span># product-updates</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary mt-1">
+                      <span>📹</span> Video Meetings
+                    </div>
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary">
+                      <span>✅</span> Tasks & To-dos
+                    </div>
+                    <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary">
+                      <span>📊</span> Live Org Chart
                     </div>
                   </div>
                 </div>
+
+                {/* User Identity Profile */}
+                <div className="flex items-center gap-2 pt-3 border-t border-border">
+                  <span className="w-7 h-7 rounded-full bg-primary-wash text-primary text-[0.78rem] font-bold grid place-items-center flex-none font-heading">AK</span>
+                  <div className="flex flex-col min-w-0">
+                    <span className="font-heading text-[0.82rem] font-bold truncate">Aditya Kumar</span>
+                    <span className="text-[0.68rem] text-text-muted leading-none block mt-0.5">Admin · Online</span>
+                  </div>
+                </div>
               </div>
 
-              {/* Chat Input Area */}
-              <div className="border border-border rounded-lg bg-bg-surface p-2 flex items-center justify-between mt-4">
-                <span className="text-text-muted text-[0.84rem] pl-2 font-body">Message # general...</span>
-                <div className="flex gap-2">
-                  <span className="w-7 h-7 rounded hover:bg-bg-hover grid place-items-center text-text-secondary cursor-pointer">🎤</span>
-                  <span className="w-7 h-7 rounded hover:bg-bg-hover grid place-items-center text-text-secondary cursor-pointer">📹</span>
-                  <span className="w-7.5 h-7.5 rounded bg-primary text-white font-bold text-[0.82rem] hover:bg-primary/95 active:scale-95 transition-all grid place-items-center px-3.5 cursor-pointer select-none">Send</span>
+              {/* Console Content Window (Chat + Threads Preview) */}
+              <div className="bg-bg-base p-5 flex flex-col justify-between">
+                <div className="flex flex-col gap-5 overflow-y-auto">
+                  {/* Header */}
+                  <div className="flex items-center justify-between border-b border-border pb-3">
+                    <div>
+                      <h3 className="font-heading text-[0.95rem] font-extrabold text-text-primary"># general</h3>
+                      <p className="text-text-secondary text-[0.76rem] font-body mt-0.5">Company-wide announcements and updates</p>
+                    </div>
+                    <span className="text-[0.76rem] text-primary font-bold bg-primary-wash px-2.5 py-1 rounded-full">12 Members Online</span>
+                  </div>
+
+                  {/* Chat Feed */}
+                  <div className="flex flex-col gap-4">
+                    <div className="flex gap-3">
+                      <span className="w-8 h-8 rounded-full bg-bg-surface border border-border text-text-primary font-bold text-[0.84rem] grid place-items-center flex-none font-heading">RM</span>
+                      <div className="flex flex-col">
+                        <div className="flex items-baseline gap-2">
+                          <b className="font-heading text-[0.86rem] font-bold">Rohan Mehta</b>
+                          <span className="text-text-muted text-[0.68rem] font-body">11:24 AM</span>
+                        </div>
+                        <p className="text-text-secondary text-[0.88rem] mt-1 leading-relaxed font-body">
+                          Hey team, did we align on the GST invoice format for next month's billing cycle?
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3 bg-primary-wash/40 p-3 rounded-lg border border-primary/10">
+                      <span className="w-8 h-8 rounded-full bg-primary-wash text-primary font-bold text-[0.84rem] grid place-items-center flex-none font-heading">AK</span>
+                      <div className="flex flex-col">
+                        <div className="flex items-baseline gap-2">
+                          <b className="font-heading text-[0.86rem] font-bold text-primary">Aditya Kumar</b>
+                          <span className="text-text-muted text-[0.68rem] font-body">11:26 AM</span>
+                        </div>
+                        <p className="text-text-secondary text-[0.88rem] mt-1 leading-relaxed font-body">
+                          Yes! Resolved. We have configured direct GST invoicing inside Squeako's growth panel.
+                          I've also created a task for the finance team to audit the INR transaction accounts.
+                        </p>
+                        <div className="flex gap-2.5 mt-2.5">
+                          <span className="inline-flex items-center gap-1.5 text-[0.75rem] font-bold text-primary bg-primary-wash px-2 py-0.5 rounded border border-primary/20">
+                            ✅ Task: Audit INR Accounts (Assigned to Finance)
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chat Input Area */}
+                <div className="border border-border rounded-lg bg-bg-surface p-2 flex items-center justify-between mt-4">
+                  <span className="text-text-muted text-[0.84rem] pl-2 font-body">Message # general...</span>
+                  <div className="flex gap-2">
+                    <span className="w-7 h-7 rounded hover:bg-bg-hover grid place-items-center text-text-secondary cursor-pointer">🎤</span>
+                    <span className="w-7 h-7 rounded hover:bg-bg-hover grid place-items-center text-text-secondary cursor-pointer">📹</span>
+                    <span className="w-7.5 h-7.5 rounded bg-primary text-white font-bold text-[0.82rem] hover:bg-primary/95 active:scale-95 transition-all grid place-items-center px-3.5 cursor-pointer select-none">Send</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>

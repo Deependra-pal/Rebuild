@@ -205,7 +205,7 @@ export default function HowItWorks() {
   return (
     <div
       ref={containerRef}
-      className="w-full relative overflow-hidden bg-bg-card border-b border-border"
+      className="w-full relative overflow-hidden bg-transparent"
     >
       {/* 1. DESKTOP INTERACTIVE PINNING DECK LAYOUT */}
       <div className="hidden lg:flex items-center min-h-screen py-20 px-0 relative z-10">

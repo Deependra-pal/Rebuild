@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* Squeako Semantic Tokens */
-  --color-bg-base: #08090C;
-  /* Deep Charcoal Base background */
-  --color-bg-surface: #111318;
-  /* Primary dark surface */
-  --color-bg-card: #161920;
-  /* Secondary card surface */
-  --color-bg-elevated: #1C1F2B;
-  /* Elevated surface */
-  --color-bg-hover: #222634;
-  /* Interactive Hover Surface */
+  /* Squeako Ocean Glass — Premium Elevation System */
+  /* Base canvas: deep navy-black, not pure black. Has blue DNA. */
+  --color-bg-base: #060A14;
+  /* Surface: elevated navy panel, 8% brighter than base */
+  --color-bg-surface: #0C1221;
+  /* Card: floating above surface, clear depth perception */
+  --color-bg-card: #101828;
+  /* Elevated: highest elevation, interactive zones */
+  --color-bg-elevated: #151E30;
+  /* Hover: interactive state lift */
+  --color-bg-hover: #1B2540;
 
   --color-border: rgba(255, 255, 255, 0.05);
   /* Hairline borders */
@@ -122,8 +122,8 @@ h6 {
   --mint-deep: #0CE59E;
   --mint-wash: rgba(12, 229, 158, 0.08);
   --lilac: #12141C;
-  --paper: #08090C;
-  --card: #12141C;
+  --paper: #060A14;
+  --card: #101828;
   --muted: #8E939E;
   --muted-lt: #626B7A;
   --hairline: rgba(255, 255, 255, 0.05);
@@ -141,9 +141,9 @@ h6 {
   --box-lilac-border: rgba(255, 255, 255, 0.05);
   --box-mint-bg: #12141C;
   --box-mint-border: rgba(255, 255, 255, 0.05);
-  --box-dark-bg: #08090C;
-  --box-grad-bg: #1C1F2B;
-  --page-hero-bg: #08090C;
+  --box-dark-bg: #060A14;
+  --box-grad-bg: #151E30;
+  --page-hero-bg: #060A14;
 }
 
 html {
@@ -151,7 +151,12 @@ html {
 }
 
 body {
-  background-color: var(--color-bg-base);
+  /* Ocean Glass Premium Canvas:
+     Deep navy-black base — not pure black.
+     Has blue DNA. Feels alive, not dead.
+     No grids, no patterns. Pure atmospheric depth.
+  */
+  background-color: #060A14;
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -447,11 +452,9 @@ main#main .text-muted {
   color: var(--muted) !important;
 }
 
-/* 4. Footer background override */
 footer {
-  background-image: linear-gradient(135deg, #06090E 0%, #0B1017 50%, #121822 100%) !important;
-  background-color: #06090E !important;
-  border-color: rgba(10, 132, 255, 0.12) !important;
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
 /* 5. Mobile & Dropdown menu overrides */
@@ -659,11 +662,11 @@ span.bg-lilac.rounded-full.text-violet:hover {
 
 .eyebrow::before {
   content: "" !important;
-  width: 7px !important;
-  height: 7px !important;
+  width: 6px !important;
+  height: 6px !important;
   border-radius: 50% !important;
-  background: #1FA968 !important;
-  box-shadow: 0 0 0 3px rgba(31, 169, 104, 0.25) !important;
+  background: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.2) !important;
 }
 
 /* device mock styling */

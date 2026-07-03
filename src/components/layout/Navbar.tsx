@@ -61,8 +61,10 @@ export default function Navbar() {
 
       <nav
         ref={navbarRef}
-        className={`sticky top-0 z-[100] bg-bg-base/70 backdrop-blur-xl border-b border-border transition-all duration-200 ${
-          isScrolled ? 'shadow-sm' : ''
+        className={`sticky top-0 z-[100] border-b border-white/[0.05] transition-all duration-200 ${
+          isScrolled
+            ? 'bg-[rgba(6,10,20,0.92)] shadow-md shadow-black/50 backdrop-blur-xl'
+            : 'bg-[rgba(6,10,20,0.80)] backdrop-blur-xl'
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-3.5 flex items-center justify-between gap-6">

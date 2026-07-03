@@ -52,9 +52,11 @@ export default function CtaSection({
   }, []);
 
   return (
-    <section ref={containerRef} className={`bg-bg-elevated py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden ${className}`}>
-      {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full z-0 pointer-events-none opacity-20 blur-[130px] bg-gradient-to-r from-primary to-accent"></div>
+    <section ref={containerRef} className={`relative py-24 md:py-36 px-6 md:px-8 overflow-hidden ${className}`}>
+      {/* Deep navy luminous surface — finale zone */}
+      <div className="absolute inset-0 bg-[rgba(5,12,28,0.7)] border-y border-primary/[0.1]"></div>
+      {/* Finale corona — the page's closing light source */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[600px] rounded-full z-0 pointer-events-none blur-[100px]" style={{background: 'radial-gradient(ellipse, rgba(10,132,255,0.18) 0%, rgba(48,213,200,0.06) 40%, transparent 65%)'}}></div>
 
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center">
         <div className="text-center max-w-[760px] mx-auto flex flex-col items-center">
@@ -64,7 +66,7 @@ export default function CtaSection({
           <p className="cta-item opacity-0 text-[1.125rem] text-text-secondary max-w-[580px] mb-8 leading-relaxed font-body">
             {description}
           </p>
-          
+
           <div className="cta-item opacity-0 flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 w-full sm:w-auto">
             <Button href={primaryBtnHref} variant="primary" size="lg" className="w-full sm:w-auto !bg-primary hover:!bg-primary/90 active:!bg-primary/80 !text-white !shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 border-0">
               {primaryBtnText}

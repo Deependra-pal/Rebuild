@@ -160,7 +160,7 @@ export default function PackedFeatures() {
   ];
 
   return (
-    <section ref={containerRef} className="bg-bg-card py-20 md:py-32 px-6 md:px-8 border-b border-border overflow-hidden">
+    <section ref={containerRef} className="bg-transparent py-20 md:py-32 px-6 md:px-8 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10">
 
         {/* Section Head */}

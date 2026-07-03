@@ -6,7 +6,7 @@ import Button from '../shared/Button';
 
 export default function PricingTeaser() {
   return (
-    <section className="bg-bg-card py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section className="bg-transparent py-20 md:py-32 px-6 md:px-8 relative overflow-hidden">
       {/* Background glow behind centered panel */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full z-0 pointer-events-none opacity-20 blur-[130px] bg-gradient-to-r from-primary to-accent"></div>
 

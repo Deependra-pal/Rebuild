@@ -98,7 +98,11 @@ export default function FeatureTabs() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-bg-base py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <div ref={containerRef} className="relative py-20 md:py-32 px-6 md:px-8 overflow-hidden">
+      {/* Deep navy glass surface — the product playground zone */}
+      <div className="absolute inset-0 bg-[rgba(10,18,35,0.6)] border-y border-white/[0.07]"></div>
+      {/* Ambient glow — the product itself is a light source */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] rounded-full pointer-events-none blur-[130px]" style={{background: 'radial-gradient(ellipse, rgba(10,132,255,0.1) 0%, rgba(48,213,200,0.04) 50%, transparent 70%)'}}></div>
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center">
         {/* Header */}
         <div className="feature-fade-in opacity-0 max-w-[800px] text-center mb-12 flex flex-col items-center">
@@ -120,8 +124,8 @@ export default function FeatureTabs() {
                 key={tab.id}
                 onClick={() => setActiveFeatureTab(tab.id)}
                 className={`flex items-center gap-2 py-2 px-5 rounded-full font-heading font-semibold text-[0.86rem] cursor-pointer transition-all duration-150 shrink-0 whitespace-nowrap ${isActive
-                    ? 'bg-primary text-white shadow-sm'
-                    : 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-hover-overlay'
+                  ? 'bg-primary text-white shadow-sm'
+                  : 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-hover-overlay'
                   }`}
               >
                 <span>{tab.icon}</span>

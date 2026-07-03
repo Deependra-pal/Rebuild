@@ -21,7 +21,7 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="bg-bg-base py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section className="bg-transparent py-20 md:py-32 px-6 md:px-8 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center">
         <div className="w-full bg-bg-card border border-border rounded-xl p-8 md:p-14 shadow-lg">
           <div className="max-w-[560px] mx-auto text-center">
@@ -45,9 +45,8 @@ export default function Newsletter() {
                     setEmail(e.target.value);
                     setIsInvalid(false);
                   }}
-                  className={`flex-1 py-3 px-4 rounded-lg border font-body text-[0.95rem] bg-bg-surface text-text-primary transition-all duration-150 outline-none focus:border-primary focus:shadow-focus ${
-                    isInvalid ? 'border-error' : 'border-border'
-                  }`}
+                  className={`flex-1 py-3 px-4 rounded-lg border font-body text-[0.95rem] bg-bg-surface text-text-primary transition-all duration-150 outline-none focus:border-primary focus:shadow-focus ${isInvalid ? 'border-error' : 'border-border'
+                    }`}
                 />
                 <Button type="submit" variant="primary" className="!bg-primary hover:!bg-primary/90 active:!bg-primary/80 !text-white !shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 border-0">
                   Subscribe

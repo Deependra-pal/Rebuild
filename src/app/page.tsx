@@ -125,7 +125,147 @@ export default function Page() {
   }, []);
 
   return (
-    <main id="main">
+    <main id="main" className="relative overflow-hidden">
+      {/*
+        ═══════════════════════════════════════════════════════════════
+        ATMOSPHERIC LIGHTING SYSTEM — Ocean Glass Premium Canvas
+        
+        6 intentional light zones create depth, emotion & hierarchy.
+        Each zone has a specific purpose, position & color character.
+        Together they make the page feel alive, not flat.
+        
+        Rule: These are not decorations. They are atmosphere.
+        ═══════════════════════════════════════════════════════════════
+      */}
+
+      {/* ── ZONE 1: Hero Crown ───────────────────────────────────────
+          Large blue corona at the very top.
+          Creates the "light source above" feeling.
+          Sets the premium tone immediately.
+      ──────────────────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '-200px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '1400px',
+          height: '800px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(10,132,255,0.14) 0%, rgba(10,132,255,0.04) 50%, transparent 70%)',
+          filter: 'blur(60px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* ── ZONE 2: Problem/Solution — Left Teal Accent ──────────────
+          Soft teal glow on the left side around ~1800–2800px.
+          Adds color variety without breaking the blue DNA.
+          Creates a subtle "breath" of color variety.
+      ──────────────────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '1600px',
+          left: '-200px',
+          width: '900px',
+          height: '900px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(48,213,200,0.05) 0%, transparent 65%)',
+          filter: 'blur(100px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* ── ZONE 3: Feature Playground — Right Indigo ────────────────
+          Right-side indigo/blue glow around FeatureTabs (~3200px).
+          Makes the interactive product zone feel luminous.
+          The product itself seems to be a light source.
+      ──────────────────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '3000px',
+          right: '-300px',
+          width: '1000px',
+          height: '800px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(10,132,255,0.08) 0%, transparent 60%)',
+          filter: 'blur(120px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* ── ZONE 4: Why Switch / AI — Left Deep Blue ─────────────────
+          Left-side blue accent around ~5500–6500px.
+          Keeps the mid-page feeling atmospheric and spacious.
+          Balances Zone 3 on the opposite side.
+      ──────────────────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '5500px',
+          left: '-150px',
+          width: '800px',
+          height: '700px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(10,132,255,0.06) 0%, rgba(48,213,200,0.02) 40%, transparent 65%)',
+          filter: 'blur(130px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* ── ZONE 5: Calculator / Trust Zone — Center Subtle Blue ─────
+          Center blue glow around the savings calculator (~7500px).
+          Gives financial/trust content a sense of precision and light.
+      ──────────────────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '7200px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '1200px',
+          height: '600px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(10,132,255,0.07) 0%, transparent 60%)',
+          filter: 'blur(110px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
+      {/* ── ZONE 6: CTA Finale — Bottom Crown (mirrors Zone 1) ───────
+          Large blue corona at the very bottom.
+          Bookend to the hero crown — the page starts and ends with light.
+          The CTA feels like a conclusion, not just a section.
+      ──────────────────────────────────────────────────────────────── */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          top: '11000px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '1600px',
+          height: '700px',
+          borderRadius: '50%',
+          background: 'radial-gradient(ellipse, rgba(10,132,255,0.12) 0%, rgba(10,132,255,0.04) 50%, transparent 70%)',
+          filter: 'blur(80px)',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+
       <Hero />
       <TrustStrip />
       <ProblemStory />

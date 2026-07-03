@@ -9,7 +9,7 @@ export default function TrustStrip() {
   ];
 
   return (
-    <div className="bg-bg-surface py-10 md:py-12 border-b border-border overflow-hidden relative">
+    <div className="bg-transparent pt-2 pb-12 md:pt-4 md:pb-16 overflow-hidden relative">
       <div className="max-w-[1280px] mx-auto px-6 md:px-8">
         <div className="text-center reveal">
           {/* Section subtitle */}
@@ -20,12 +20,12 @@ export default function TrustStrip() {
           {/* Scrolling Marquee */}
           <div className="relative w-full overflow-hidden py-2 my-2 marquee-container">
             {/* Fading overlays to blend with surface */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-bg-surface to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-bg-surface to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#060A14] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#060A14] to-transparent z-10 pointer-events-none"></div>
 
             <div className="flex gap-14 animate-marquee whitespace-nowrap">
               {logos.map((logo, index) => (
-                <span 
+                <span
                   key={index}
                   className="flex items-center gap-2.5 font-heading font-extrabold text-[1.4rem] text-text-secondary/70 hover:text-text-primary transition-colors shrink-0 select-none"
                 >

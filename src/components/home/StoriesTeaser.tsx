@@ -63,9 +63,9 @@ export default function StoriesTeaser() {
   ];
 
   return (
-    <section ref={containerRef} className="bg-bg-card py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section ref={containerRef} className="bg-transparent pt-20 pb-10 md:pt-32 md:pb-12 px-6 md:px-8 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10">
-        
+
         {/* Head */}
         <div className="max-w-[800px] mx-auto mb-16 text-center flex flex-col items-center">
           <Eyebrow>Real results</Eyebrow>

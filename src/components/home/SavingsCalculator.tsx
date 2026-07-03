@@ -73,9 +73,13 @@ export default function SavingsCalculator() {
   };
 
   return (
-    <section ref={containerRef} className="bg-bg-surface py-20 md:py-32 px-6 md:px-8 border-b border-border relative overflow-hidden">
+    <section ref={containerRef} className="relative py-20 md:py-32 px-6 md:px-8 overflow-hidden">
+      {/* Deep navy glass — financial precision zone */}
+      <div className="absolute inset-0 bg-[rgba(6,15,30,0.65)] border-y border-primary/[0.08]"></div>
+      {/* Blue precision glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full pointer-events-none blur-[140px]" style={{background: 'radial-gradient(ellipse, rgba(10,132,255,0.12) 0%, transparent 65%)'}}></div>
       <div className="max-w-[1200px] mx-auto relative z-10">
-        
+
         {/* Head */}
         <div className="max-w-[800px] mx-auto mb-16 text-center flex flex-col items-center">
           <Eyebrow>See your savings</Eyebrow>
@@ -90,7 +94,7 @@ export default function SavingsCalculator() {
         {/* Calculator Card Frame */}
         <div className="bg-bg-card border border-border rounded-xl p-6 lg:p-10 shadow-lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-            
+
             {/* Left Column: Controls */}
             <div className="flex flex-col calc-controls opacity-0 text-left">
               <label className="font-heading font-extrabold text-[1.1rem] text-text-primary block mb-1">
@@ -109,11 +113,10 @@ export default function SavingsCalculator() {
                       key={tool.name}
                       type="button"
                       onClick={() => handleToolToggle(tool.name)}
-                      className={`flex items-center gap-3 w-full border rounded-lg p-3 cursor-pointer transition-all duration-150 text-left relative focus:outline-none ${
-                        isSelected
+                      className={`flex items-center gap-3 w-full border rounded-lg p-3 cursor-pointer transition-all duration-150 text-left relative focus:outline-none ${isSelected
                           ? 'bg-primary-wash border-primary text-text-primary shadow-[0_0_12px_rgba(12,229,158,0.12)]'
                           : 'bg-bg-surface border-border hover:border-border-hover hover:bg-hover-overlay text-text-secondary hover:text-text-primary'
-                      }`}
+                        }`}
                     >
                       <span
                         className="w-7 h-7 rounded grid place-items-center text-white text-[0.86rem] font-bold shrink-0"
@@ -130,9 +133,8 @@ export default function SavingsCalculator() {
                         </i>
                       </span>
                       <span
-                        className={`absolute right-3 top-1/2 -translate-y-1/2 text-[0.95rem] font-black text-success transition-opacity duration-150 ${
-                          isSelected ? 'opacity-100' : 'opacity-0'
-                        }`}
+                        className={`absolute right-3 top-1/2 -translate-y-1/2 text-[0.95rem] font-black text-success transition-opacity duration-150 ${isSelected ? 'opacity-100' : 'opacity-0'
+                          }`}
                       >
                         ✓
                       </span>

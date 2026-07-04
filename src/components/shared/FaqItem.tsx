@@ -13,8 +13,8 @@ export default function FaqItem({ question, answer, className = '' }: FaqItemPro
 
   return (
     <div
-      className={`bg-bg-elevated border transition-all duration-200 rounded-xl overflow-hidden hover:bg-bg-hover ${
-        isOpen ? 'border-primary shadow-sm bg-bg-hover' : 'border-border'
+      className={`bg-bg-card border transition-all duration-200 rounded-[18px] overflow-hidden ${
+        isOpen ? 'border-primary bg-bg-card shadow-sm' : 'border-border hover:border-border-hover'
       } ${className}`}
     >
       <button

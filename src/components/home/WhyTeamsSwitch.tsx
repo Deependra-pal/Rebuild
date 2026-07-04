@@ -13,7 +13,7 @@ const points = [
 
 export default function WhyTeamsSwitch() {
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 reveal">
         <SectionHead
           eyebrow="Why teams switch"
@@ -26,13 +26,9 @@ export default function WhyTeamsSwitch() {
           {points.map((p) => (
             <div
               key={p.title}
-              className={`sq-card sq-card-hover p-6 flex flex-col ${p.wide ? 'lg:col-span-2' : ''}`}
-              style={p.feature ? { borderColor: 'color-mix(in srgb, var(--color-primary) 40%, var(--color-border))' } : undefined}
+              className={`sq-card sq-card-hover p-6 flex flex-col ${p.wide ? 'lg:col-span-2' : ''} ${p.feature ? 'sq-card-feature' : ''}`}
             >
-              <span
-                className="w-12 h-12 rounded-xl grid place-items-center shrink-0 mb-5 text-primary"
-                style={{ background: 'var(--color-primary-wash)', border: '1px solid color-mix(in srgb, var(--color-primary) 16%, transparent)' }}
-              >
+              <span className={`sq-icon w-12 h-12 rounded-xl shrink-0 mb-5 ${p.feature ? 'sq-icon-accent' : ''}`}>
                 <svg viewBox="0 0 24 24" {...s} className="w-[22px] h-[22px]">{p.icon}</svg>
               </span>
               <h4 className={`font-heading font-extrabold text-text-primary mb-2 leading-snug ${p.wide ? 'text-[1.2rem]' : 'text-[1.05rem]'}`}>{p.title}</h4>

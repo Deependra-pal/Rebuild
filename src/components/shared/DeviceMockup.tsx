@@ -17,7 +17,7 @@ export default function DeviceMockup() {
       </div>
 
       <div className="absolute bg-white border border-hairline rounded-[16px] shadow-sh-md p-2 z-10 animate-floaty hidden sm:flex -bottom-[26px] -right-[30px] items-center gap-2 [animation-delay:1.6s]">
-        <div className="w-8 h-8 rounded-lg bg-[#E6F9EE] grid place-items-center text-[#16D196] flex-none">
+        <div className="w-8 h-8 rounded-lg bg-mint-wash grid place-items-center text-mint flex-none">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[15px] h-[15px]">
             <circle cx="12" cy="12" r="9" />
             <path d="M12 7v5l3 2" />

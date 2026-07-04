@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import ArrowButton from './ArrowButton';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface CtaSectionProps {
@@ -66,12 +67,9 @@ export default function CtaSection({
           </p>
 
           <div className="cta-item opacity-0 flex flex-col sm:flex-row gap-3.5 justify-center items-center mb-9 w-full sm:w-auto">
-            <Link href={primaryBtnHref} className="sq-btn sq-btn-invert sq-btn-lg group w-full sm:w-auto">
+            <ArrowButton href={primaryBtnHref} className="sq-btn sq-btn-invert sq-btn-lg w-full sm:w-auto">
               {primaryBtnText}
-              <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M5 12h14M13 6l6 6-6 6" />
-              </svg>
-            </Link>
+            </ArrowButton>
             {secondaryBtnText && (
               <Link href={secondaryBtnHref} className="sq-btn sq-btn-ghost-light sq-btn-lg w-full sm:w-auto">
                 {secondaryBtnText}

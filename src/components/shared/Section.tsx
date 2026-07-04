@@ -34,12 +34,12 @@ export function SectionHead({
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2
-        className={`font-heading font-extrabold tracking-[-0.035em] leading-[1.08] text-text-primary text-[clamp(1.85rem,3.9vw,2.75rem)] mt-5 ${titleClassName}`}
+        className={`font-heading font-extrabold tracking-[-0.042em] leading-[1.04] text-text-primary text-[clamp(2.05rem,4.3vw,3rem)] mt-5 ${titleClassName}`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className={`font-body text-[1.05rem] md:text-[1.1rem] text-text-secondary leading-relaxed mt-4 ${isCenter ? 'max-w-[600px]' : 'max-w-[540px]'}`}>
+        <p className={`font-body text-[1.06rem] md:text-[1.15rem] text-text-secondary leading-[1.6] mt-5 ${isCenter ? 'max-w-[600px]' : 'max-w-[540px]'}`}>
           {subtitle}
         </p>
       )}

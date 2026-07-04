@@ -29,7 +29,7 @@ export default function AiSection() {
         <div className="flex flex-col gap-4">
           {points.map((p, i) => (
             <div key={p.title} className="sq-card sq-card-hover p-6 flex gap-5 items-start">
-              <span className="w-12 h-12 rounded-xl grid place-items-center shrink-0 text-primary" style={{ background: 'var(--color-primary-wash)', border: '1px solid color-mix(in srgb, var(--color-primary) 16%, transparent)' }}>
+              <span className="sq-icon sq-icon-accent w-12 h-12 rounded-xl shrink-0">
                 <svg viewBox="0 0 24 24" {...s} className="w-[22px] h-[22px]">{p.icon}</svg>
               </span>
               <div>

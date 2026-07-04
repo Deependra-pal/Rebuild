@@ -223,12 +223,12 @@ export default function Footer() {
                 placeholder="Business Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-transparent border-t-0 border-l-0 border-r-0 border-b border-white/20 focus:border-b-[#0A84FF] text-text-primary rounded-none px-0 py-2 text-[0.82rem] focus:outline-none w-full transition-colors duration-150 font-body"
+                className="bg-transparent border-t-0 border-l-0 border-r-0 border-b border-white/20 focus:border-b-primary text-text-primary rounded-none px-0 py-2 text-[0.82rem] focus:outline-none w-full transition-colors duration-150 font-body"
               />
               <button
                 type="submit"
                 aria-label="Subscribe"
-                className="w-9 h-9 rounded-full bg-primary text-white hover:!bg-primary-hover hover:!text-white hover:scale-[1.03] active:scale-[0.97] grid place-items-center transition-all shrink-0 cursor-pointer shadow-sm"
+                className="w-9 h-9 rounded-full bg-primary text-white grid place-items-center transition-colors duration-200 shrink-0 cursor-pointer shadow-sm"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
                   <line x1="5" y1="12" x2="19" y2="12" />
@@ -243,7 +243,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 pt-6 text-left items-end">
           {/* Giant decorative wordmark logo */}
           <div className="flex items-center justify-start select-none">
-            <div className="font-heading font-extrabold text-[3.8rem] md:text-[4.5rem] text-primary/10 tracking-[-0.04em] leading-none whitespace-nowrap">
+            <div className="font-heading font-extrabold text-[3.8rem] md:text-[4.5rem] tracking-[-0.04em] leading-none whitespace-nowrap" style={{ color: '#ffffff' }}>
               squeako
             </div>
           </div>

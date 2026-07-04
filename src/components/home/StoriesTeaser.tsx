@@ -21,7 +21,7 @@ const stories = [
 
 export default function StoriesTeaser() {
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 reveal">
         <SectionHead eyebrow="Real results" title="Teams that made the switch" className="mb-14" />
 
@@ -29,7 +29,7 @@ export default function StoriesTeaser() {
           {stories.map((st) => (
             <div
               key={st.name}
-              className={`sq-card sq-card-hover p-7 flex flex-col gap-5 ${st.featured ? 'lg:col-span-1 lg:row-span-2 lg:p-9' : ''}`}
+              className={`sq-card sq-card-hover p-7 flex flex-col gap-5 ${st.featured ? 'sq-card-feature lg:col-span-1 lg:row-span-2 lg:p-9' : ''}`}
             >
               <div className={`font-heading font-extrabold leading-none ${st.featured ? 'text-[2rem]' : 'text-[1.55rem]'}`} style={{ color: 'var(--color-mint,#0CE59E)' }}>
                 {st.metric}

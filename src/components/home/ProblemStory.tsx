@@ -2,10 +2,10 @@ import { Eyebrow } from '../shared/Section';
 
 export default function ProblemStory() {
   const legacyStack = [
-    { name: 'Chat App', price: '₹250/mo', icon: '💬' },
-    { name: 'Video Meetings', price: '₹200/mo', icon: '📹' },
-    { name: 'Task Tracker', price: '₹180/mo', icon: '✅' },
-    { name: 'Calling Add-on', price: '₹120/mo', icon: '📞' },
+    { name: 'Chat App', price: '₹250/mo', icon: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /> },
+    { name: 'Video Meetings', price: '₹200/mo', icon: <><path d="M23 7l-7 5 7 5V7z" /><rect x="1" y="5" width="15" height="14" rx="2" /></> },
+    { name: 'Task Tracker', price: '₹180/mo', icon: <path d="M9 11l3 3L20 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9" /> },
+    { name: 'Calling Add-on', price: '₹120/mo', icon: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z" /> },
   ];
 
   const pains = [
@@ -24,7 +24,7 @@ export default function ProblemStory() {
   ];
 
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-center reveal">
 
         {/* Narrative */}
@@ -62,7 +62,9 @@ export default function ProblemStory() {
               {legacyStack.map((tool) => (
                 <div key={tool.name} className="flex justify-between items-center py-2.5 border-b border-border/50 last:border-0">
                   <span className="flex items-center gap-2.5 text-[0.88rem] text-text-primary font-medium">
-                    <span className="text-[1.05rem]">{tool.icon}</span>{tool.name}
+                    <span className="w-6 h-6 rounded-md grid place-items-center shrink-0" style={{ background: 'var(--color-bg-hover)', color: 'var(--color-text-secondary)' }}>
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2">{tool.icon}</svg>
+                    </span>{tool.name}
                   </span>
                   <span className="font-heading text-[0.88rem] text-text-secondary font-semibold">{tool.price}</span>
                 </div>

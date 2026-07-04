@@ -61,7 +61,7 @@ export default function Navbar() {
 
       <nav
         ref={navbarRef}
-        className={`sq-nav sticky top-0 z-[100] transition-all duration-300 ${
+        className={`sq-nav sticky top-0 z-[160] transition-all duration-300 ${
           isScrolled ? 'sq-nav-scrolled' : ''
         }`}
       >
@@ -69,9 +69,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" onClick={handleLinkClick} className="sq-logo flex items-center shrink-0">
             <img
-              src="/logo/1782391827071-a1ef33c7-4e28-4178-ae95-96525ad734f0.png" 
-              alt="Squeako Logo" 
-              className="w-[145px] h-[44px] object-contain scale-[1.5]" 
+              src="/logo/1782391827071-a1ef33c7-4e28-4178-ae95-96525ad734f0.png"
+              alt="Squeako"
+              className="h-11 sm:h-[52px] w-auto object-contain -my-1 sm:-my-2"
             />
           </Link>
 
@@ -413,7 +413,7 @@ export default function Navbar() {
             <Link href="/contact" onClick={handleLinkClick} className="font-heading font-semibold text-[0.88rem] text-text-secondary hover:text-text-primary hover:bg-hover-overlay py-1.5 px-4 rounded-full transition-all hidden lg:inline-block">
               Sign In
             </Link>
-            <Button href="/contact" onClick={handleLinkClick} variant="primary" size="sm">
+            <Button href="/contact" onClick={handleLinkClick} variant="primary" size="sm" className="hidden sm:inline-flex">
               Start free
             </Button>
             

@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { Eyebrow } from '../shared/Section';
+import ArrowButton from '../shared/ArrowButton';
 
 export default function PricingTeaser() {
   return (
@@ -16,10 +16,9 @@ export default function PricingTeaser() {
             <p className="text-[1.08rem] text-text-secondary max-w-[540px] mb-9 leading-relaxed">
               Flexible subscriptions designed to fit startups and growing operations, with zero hidden platform charges.
             </p>
-            <Link href="/pricing" className="sq-btn sq-btn-primary sq-btn-lg group">
+            <ArrowButton href="/pricing" className="sq-btn sq-btn-primary sq-btn-lg">
               See full pricing &amp; plans
-              <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </Link>
+            </ArrowButton>
           </div>
         </div>
       </div>

@@ -437,12 +437,10 @@ main#main .bg-white,
 main#main div.bg-white,
 main#main a.bg-white,
 main#main button.bg-white {
-  background-color: var(--card) !important;
-  color: var(--ink) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  background-color: var(--color-bg-card) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--sq-card-shadow) !important;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
 }
 
@@ -450,8 +448,8 @@ main#main .bg-white:hover,
 main#main div.bg-white:hover,
 main#main a.bg-white:hover,
 main#main button.bg-white:hover {
-  border-color: rgba(250, 253, 143, 0.25) !important;
-  box-shadow: 0 12px 40px rgba(250, 253, 143, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--color-border-hover) !important;
+  box-shadow: var(--sq-card-shadow-hover) !important;
 }
 
 /* 3. Handle specific components that have hardcoded light text colors */
@@ -566,9 +564,8 @@ main#main textarea::placeholder {
 main#main input:focus,
 main#main select:focus,
 main#main textarea:focus {
-  border-color: #FFFF !important;
-  box-shadow: 0 0 0 3px rgba(250, 253, 143, 0.25) !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px var(--color-primary-wash) !important;
 }
 
 /* Footer newsletter input border overrides */
@@ -584,7 +581,7 @@ footer input {
 }
 
 footer input:focus {
-  border-bottom-color: #0A84FF !important;
+  border-bottom-color: var(--color-primary) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -607,13 +604,13 @@ footer a:hover {
 /* Footer social links and subscribe button hover state */
 footer a[class*="hover:bg-"]:hover,
 footer button[class*="hover:bg-"]:hover {
-  background-color: #D9E38A !important;
-  color: #090D0C !important;
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
 }
 
 footer a[class*="hover:bg-"]:hover svg,
 footer button[class*="hover:bg-"]:hover svg {
-  color: #090D0C !important;
+  color: #ffffff !important;
 }
 
 /* Glossy Waterdrop Badge styling */
@@ -646,11 +643,11 @@ span.bg-lilac.rounded-full.text-violet:hover {
   font-size: 0.72rem !important;
   letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
-  color: #FFFFFF !important;
+  color: var(--color-text-secondary) !important;
   font-weight: 700 !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 9px !important;
 }
 
 .eyebrow::before {
@@ -659,7 +656,6 @@ span.bg-lilac.rounded-full.text-violet:hover {
   height: 6px !important;
   border-radius: 50% !important;
   background: var(--color-primary) !important;
-  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.2) !important;
 }
 
 /* device mock styling */

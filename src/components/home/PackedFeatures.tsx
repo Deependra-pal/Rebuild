@@ -19,7 +19,7 @@ const features = [
 
 export default function PackedFeatures() {
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 reveal">
         <SectionHead
           eyebrow="And there's more"
@@ -31,7 +31,7 @@ export default function PackedFeatures() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {features.map((f) => (
             <div key={f.title} className="sq-card sq-card-hover p-5 flex items-center gap-4">
-              <span className="w-11 h-11 rounded-xl grid place-items-center shrink-0 text-primary" style={{ background: 'var(--color-primary-wash)', border: '1px solid color-mix(in srgb, var(--color-primary) 16%, transparent)' }}>
+              <span className="sq-icon w-11 h-11 rounded-xl shrink-0">
                 <svg viewBox="0 0 24 24" {...s} className="w-5 h-5">{f.icon}</svg>
               </span>
               <div>

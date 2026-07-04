@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';
+import ArrowButton from '../shared/ArrowButton';
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -76,12 +77,9 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="hero-fade-in opacity-0 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto mb-7">
-          <Link href="/contact" className="sq-btn sq-btn-primary sq-btn-lg group w-full sm:w-auto">
+          <ArrowButton href="/contact" className="sq-btn sq-btn-primary sq-btn-lg w-full sm:w-auto">
             Start free sandbox trial
-            <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </Link>
+          </ArrowButton>
           <Link href="/contact" className="sq-btn sq-btn-secondary sq-btn-lg w-full sm:w-auto">
             Book a migration call
           </Link>
@@ -147,42 +145,44 @@ export default function Hero() {
               {/* sidebar */}
               <div className="p-4 flex flex-col justify-between border-r" style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface-2)' }}>
                 <div className="flex flex-col gap-5">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2.5">
                     <div
-                      className="w-6 h-6 rounded-md grid place-items-center text-[0.8rem] font-black font-heading"
-                      style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}
+                      className="w-7 h-7 rounded-lg grid place-items-center text-[0.82rem] font-black font-heading text-white"
+                      style={{ background: 'linear-gradient(140deg, var(--h-accent-solid), color-mix(in srgb, var(--h-accent-solid) 60%, #000))', boxShadow: '0 5px 12px -4px var(--h-accent-ring)' }}
                     >
                       S
                     </div>
-                    <b className="font-heading text-[0.88rem] leading-none" style={{ color: 'var(--h-text)' }}>Squeako HQ</b>
+                    <b className="font-heading text-[0.9rem] leading-none" style={{ color: 'var(--h-text)' }}>Squeako HQ</b>
                   </div>
 
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex flex-col gap-0.5">
                     <div
-                      className="flex items-center gap-2 px-2 py-1.5 rounded-md text-[0.84rem] font-semibold"
+                      className="flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[0.84rem] font-semibold"
                       style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}
                     >
-                      <span>💬</span> Channels
+                      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+                      Channels
                     </div>
-                    <div className="pl-7 flex flex-col gap-2 text-[0.84rem] font-body" style={{ color: 'var(--h-text-2)' }}>
-                      <span># general</span>
+                    <div className="pl-[30px] flex flex-col gap-1.5 text-[0.83rem] font-body py-1.5" style={{ color: 'var(--h-text-2)' }}>
+                      <span style={{ color: 'var(--h-text)', fontWeight: 600 }}># general</span>
                       <span># engineering</span>
                       <span># product-updates</span>
                     </div>
                     {[
-                      ['📹', 'Video Meetings'],
-                      ['✅', 'Tasks & To-dos'],
-                      ['📊', 'Live Org Chart'],
-                    ].map(([ico, label]) => (
-                      <div key={label} className="flex items-center gap-2 px-2 py-1.5 rounded-md text-[0.84rem] font-semibold" style={{ color: 'var(--h-text-2)' }}>
-                        <span>{ico}</span> {label}
+                      { label: 'Video Meetings', icon: <><path d="M23 7l-7 5 7 5V7z" /><rect x="1" y="5" width="15" height="14" rx="2" /></> },
+                      { label: 'Tasks & To-dos', icon: <path d="M9 11l3 3L20 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9" /> },
+                      { label: 'Live Org Chart', icon: <><rect x="9" y="2" width="6" height="5" rx="1" /><rect x="2" y="17" width="6" height="5" rx="1" /><rect x="16" y="17" width="6" height="5" rx="1" /><path d="M12 7v4M5 17v-2h14v2" /></> },
+                    ].map((item) => (
+                      <div key={item.label} className="flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-[0.84rem] font-semibold" style={{ color: 'var(--h-text-2)' }}>
+                        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2">{item.icon}</svg>
+                        {item.label}
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 pt-3 border-t" style={{ borderColor: 'var(--h-border)' }}>
-                  <span className="w-7 h-7 rounded-full grid place-items-center text-[0.78rem] font-bold font-heading flex-none" style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}>AK</span>
+                  <span className="w-8 h-8 rounded-full grid place-items-center text-[0.72rem] font-bold font-heading flex-none text-white" style={{ background: 'linear-gradient(140deg, var(--h-accent-solid), color-mix(in srgb, var(--h-accent-solid) 58%, #000))' }}>AK</span>
                   <div className="flex flex-col min-w-0">
                     <span className="font-heading text-[0.82rem] font-bold truncate" style={{ color: 'var(--h-text)' }}>Aditya Kumar</span>
                     <span className="text-[0.68rem] leading-none mt-0.5 flex items-center gap-1" style={{ color: 'var(--h-text-3)' }}>
@@ -207,7 +207,7 @@ export default function Hero() {
 
                   <div className="flex flex-col gap-4">
                     <div className="flex gap-3">
-                      <span className="w-8 h-8 rounded-full grid place-items-center font-bold text-[0.82rem] font-heading flex-none border" style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface-2)', color: 'var(--h-text)' }}>RM</span>
+                      <span className="w-8 h-8 rounded-full grid place-items-center font-bold text-[0.76rem] font-heading flex-none text-white" style={{ background: 'linear-gradient(140deg, #6B7A9C, #454E6B)' }}>RM</span>
                       <div className="flex flex-col">
                         <div className="flex items-baseline gap-2">
                           <b className="font-heading text-[0.86rem] font-bold" style={{ color: 'var(--h-text)' }}>Rohan Mehta</b>
@@ -220,7 +220,7 @@ export default function Hero() {
                     </div>
 
                     <div className="flex gap-3 p-3 rounded-xl border" style={{ background: 'var(--h-card)', borderColor: 'var(--h-card-border)' }}>
-                      <span className="w-8 h-8 rounded-full grid place-items-center font-bold text-[0.82rem] font-heading flex-none" style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}>AK</span>
+                      <span className="w-8 h-8 rounded-full grid place-items-center font-bold text-[0.76rem] font-heading flex-none text-white" style={{ background: 'linear-gradient(140deg, var(--h-accent-solid), color-mix(in srgb, var(--h-accent-solid) 58%, #000))' }}>AK</span>
                       <div className="flex flex-col">
                         <div className="flex items-baseline gap-2">
                           <b className="font-heading text-[0.86rem] font-bold" style={{ color: 'var(--h-accent)' }}>Aditya Kumar</b>
@@ -231,8 +231,9 @@ export default function Hero() {
                           I&apos;ve also created a task for the finance team to audit the INR transaction accounts.
                         </p>
                         <div className="flex gap-2.5 mt-2.5">
-                          <span className="inline-flex items-center gap-1.5 text-[0.74rem] font-bold px-2 py-0.5 rounded-md border" style={{ color: 'var(--h-success)', background: 'color-mix(in srgb, var(--h-success) 12%, transparent)', borderColor: 'color-mix(in srgb, var(--h-success) 28%, transparent)' }}>
-                            ✅ Task: Audit INR Accounts · Finance
+                          <span className="inline-flex items-center gap-1.5 text-[0.74rem] font-bold px-2.5 py-1 rounded-md border" style={{ color: 'var(--h-success)', background: 'color-mix(in srgb, var(--h-success) 12%, transparent)', borderColor: 'color-mix(in srgb, var(--h-success) 28%, transparent)' }}>
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="3"><path d="M20 6L9 17l-5-5" /></svg>
+                            Task: Audit INR Accounts · Finance
                           </span>
                         </div>
                       </div>
@@ -244,8 +245,8 @@ export default function Hero() {
                 <div className="rounded-xl p-2 flex items-center justify-between mt-4 border" style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface)' }}>
                   <span className="text-[0.84rem] pl-2 font-body" style={{ color: 'var(--h-text-3)' }}>Message # general…</span>
                   <div className="flex gap-2 items-center">
-                    <span className="w-7 h-7 rounded-md grid place-items-center cursor-pointer" style={{ color: 'var(--h-text-2)' }}>🎤</span>
-                    <span className="w-7 h-7 rounded-md grid place-items-center cursor-pointer" style={{ color: 'var(--h-text-2)' }}>📹</span>
+                    <span className="w-7 h-7 rounded-md grid place-items-center cursor-pointer" style={{ color: 'var(--h-text-3)' }}><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4" /></svg></span>
+                    <span className="w-7 h-7 rounded-md grid place-items-center cursor-pointer" style={{ color: 'var(--h-text-3)' }}><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M23 7l-7 5 7 5V7z" /><rect x="1" y="5" width="15" height="14" rx="2" /></svg></span>
                     <span className="rounded-md font-bold text-[0.82rem] grid place-items-center px-3.5 py-1.5 cursor-pointer select-none" style={{ background: 'var(--h-accent-solid)', color: '#fff' }}>
                       Send
                     </span>

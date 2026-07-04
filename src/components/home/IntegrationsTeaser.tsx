@@ -8,7 +8,7 @@ const tools = [
   { letter: 'Z', name: 'Zapier' },
   { letter: 'T', name: 'Trello' },
   { letter: 'J', name: 'Jira' },
-  { letter: '🐙', name: 'GitHub' },
+  { letter: 'GH', name: 'GitHub' },
   { letter: 'R', name: 'Razorpay' },
 ];
 
@@ -19,7 +19,7 @@ export default function IntegrationsTeaser() {
         {/* copy */}
         <div className="flex flex-col text-left">
           <Eyebrow>Plays well with others</Eyebrow>
-          <h2 className="text-[clamp(1.85rem,3.9vw,2.6rem)] font-heading font-extrabold tracking-[-0.035em] mt-5 mb-4 leading-[1.08] text-text-primary">
+          <h2 className="text-[clamp(2.05rem,4.3vw,2.9rem)] font-heading font-extrabold tracking-[-0.042em] mt-5 mb-4 leading-[1.05] text-text-primary">
             Works with the tools you already use
           </h2>
           <Link href="/integrations" className="sq-btn sq-btn-secondary sq-btn-md mt-2 self-start">

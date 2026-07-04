@@ -13,10 +13,10 @@ import React, { useEffect, useState } from 'react';
 type Theme = 'light' | 'dark' | 'nebula' | 'dawn';
 
 const OPTIONS: { id: Theme; label: string; sub: string; swatch: string }[] = [
-  { id: 'light', label: 'Light', sub: 'Airy · Stripe-like', swatch: 'linear-gradient(135deg,#FFFFFF 0%,#0B5CFF 165%)' },
-  { id: 'dark', label: 'Dark', sub: 'Luminous · Linear-like', swatch: 'linear-gradient(135deg,#05070B 0%,#0A84FF 150%)' },
-  { id: 'nebula', label: 'Nebula', sub: 'Gradient A · Midnight', swatch: 'linear-gradient(135deg,#0B0E17 0%,#2A3352 62%,#6674E6 120%)' },
-  { id: 'dawn', label: 'Dawn', sub: 'Gradient B · Warm', swatch: 'linear-gradient(135deg,#FBF7F2 0%,#FF7A66 60%,#6A4BFF 120%)' },
+  { id: 'light', label: 'Light', sub: 'Warm paper', swatch: 'linear-gradient(135deg,#F3F1EA 0%,#2C5FE0 170%)' },
+  { id: 'dark', label: 'Dark', sub: 'Graphite', swatch: 'linear-gradient(135deg,#0C0D10 0%,#3D82F0 155%)' },
+  { id: 'nebula', label: 'Nebula', sub: 'Midnight · Cyan', swatch: 'linear-gradient(135deg,#0A1020 0%,#5468E8 58%,#47C6DE 120%)' },
+  { id: 'dawn', label: 'Dawn', sub: 'Ivory · Plum', swatch: 'linear-gradient(135deg,#F2EADD 0%,#DC9068 52%,#7A5CC8 120%)' },
 ];
 
 const STORAGE_KEY = 'sq-preview-theme';

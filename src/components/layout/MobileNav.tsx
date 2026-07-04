@@ -108,10 +108,10 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col gap-3">
-          <Button href="/contact" onClick={handleLinkClick} variant="ghost" className="w-full !border-border !text-text-primary hover:!bg-hover-overlay">
+          <Button href="/contact" onClick={handleLinkClick} variant="ghost" size="lg" className="w-full">
             Sign In
           </Button>
-          <Button href="/contact" onClick={handleLinkClick} variant="primary" className="w-full !bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm hover:!shadow-focus">
+          <Button href="/contact" onClick={handleLinkClick} variant="primary" size="lg" className="w-full">
             Start free
           </Button>
         </div>

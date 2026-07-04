@@ -61,19 +61,17 @@ export default function Navbar() {
 
       <nav
         ref={navbarRef}
-        className={`sticky top-0 z-[100] border-b border-white/[0.05] transition-all duration-200 ${
-          isScrolled
-            ? 'bg-[rgba(6,10,20,0.92)] shadow-md shadow-black/50 backdrop-blur-xl'
-            : 'bg-[rgba(6,10,20,0.80)] backdrop-blur-xl'
+        className={`sq-nav sticky top-0 z-[100] transition-all duration-300 ${
+          isScrolled ? 'sq-nav-scrolled' : ''
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-3.5 flex items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" onClick={handleLinkClick} className="flex items-center shrink-0">
-            <img 
+          <Link href="/" onClick={handleLinkClick} className="sq-logo flex items-center shrink-0">
+            <img
               src="/logo/1782391827071-a1ef33c7-4e28-4178-ae95-96525ad734f0.png" 
               alt="Squeako Logo" 
-              className="w-[145px] h-[44px] object-contain scale-[1.1]" 
+              className="w-[145px] h-[44px] object-contain scale-[1.5]" 
             />
           </Link>
 
@@ -229,7 +227,7 @@ export default function Navbar() {
                 </div>
 
                 {/* Bottom Bar: Client & guest access */}
-                <div className="bg-[#111827]/40 border border-border/80 rounded-lg py-4 px-5 mb-4 text-left">
+                <div className="bg-bg-surface/60 border border-border/80 rounded-lg py-4 px-5 mb-4 text-left">
                   <b className="font-heading font-bold text-[0.92rem] text-text-primary block mb-1">Client & guest access</b>
                   <span className="text-[0.78rem] text-text-secondary font-body leading-normal block">
                     Invite clients into specific groups &mdash; they only see what you share.
@@ -415,12 +413,7 @@ export default function Navbar() {
             <Link href="/contact" onClick={handleLinkClick} className="font-heading font-semibold text-[0.88rem] text-text-secondary hover:text-text-primary hover:bg-hover-overlay py-1.5 px-4 rounded-full transition-all hidden lg:inline-block">
               Sign In
             </Link>
-            <Button 
-              href="/contact" 
-              onClick={handleLinkClick} 
-              variant="primary" 
-              className="!py-1.5 !px-5 !text-[0.84rem] !font-heading !bg-primary hover:!bg-primary/90 active:!bg-primary/80 !text-white !shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 border-0"
-            >
+            <Button href="/contact" onClick={handleLinkClick} variant="primary" size="sm">
               Start free
             </Button>
             

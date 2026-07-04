@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
-import Button from '../shared/Button';
-import Eyebrow from '../shared/Eyebrow';
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import gsap from 'gsap';
 
 export default function Hero() {
@@ -12,182 +11,228 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
-
-      // Text elements entry
-      tl.fromTo('.hero-fade-in',
+      tl.fromTo(
+        '.hero-fade-in',
         { y: 24, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.12, ease: 'power3.out' },
-        0.2
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out' },
+        0.15
       );
-
-      // Product console entry
-      tl.fromTo(consoleRef.current,
-        { scale: 0.96, opacity: 0, y: 30 },
+      tl.fromTo(
+        consoleRef.current,
+        { scale: 0.965, opacity: 0, y: 34 },
         { scale: 1, opacity: 1, y: 0, duration: 1.1, ease: 'power3.out' },
         0.4
       );
     }, heroRef);
-
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={heroRef} className="bg-transparent relative pt-24 pb-8 md:pt-32 md:pb-12 px-6 md:px-8 overflow-hidden">
-      {/* Hero local glow — secondary depth layer under the page-level Zone 1 crown */}
-      <div className="absolute top-[-5%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full z-0 pointer-events-none blur-[80px]" style={{background: 'radial-gradient(ellipse, rgba(10,132,255,0.1) 0%, rgba(48,213,200,0.03) 50%, transparent 70%)'}}></div>
+    <section
+      ref={heroRef}
+      className="hero-stage relative overflow-hidden px-6 md:px-8 pt-28 pb-24 md:pt-36 md:pb-32"
+    >
+      {/* Ambient stage lighting (mesh / radial — theme-driven) */}
+      <div aria-hidden="true" className="hero-glow absolute inset-0 pointer-events-none" />
 
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center text-center">
-        {/* Localization trust badge */}
-        <div className="hero-fade-in opacity-0 mb-6">
-          <span className="inline-flex items-center gap-2 border border-primary/20 bg-primary-wash text-primary font-semibold text-[0.82rem] py-1.5 px-4.5 rounded-full font-heading">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse-custom"></span>
-            100% Data Residency in India &middot; GST Billed in INR
+        {/* Data-residency trust badge */}
+        <div className="hero-fade-in opacity-0 mb-8">
+          <span
+            className="inline-flex items-center gap-2 rounded-full py-1.5 pl-2.5 pr-4 text-[0.8rem] font-semibold font-heading border"
+            style={{
+              background: 'var(--h-badge-bg)',
+              borderColor: 'var(--h-badge-border)',
+              color: 'var(--h-badge-text)',
+              boxShadow: 'var(--h-chip-shadow)',
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full animate-pulse-custom"
+              style={{ background: 'var(--h-accent)', boxShadow: '0 0 0 3px var(--h-accent-wash)' }}
+            />
+            100% Data Residency in India · GST Billed in INR
           </span>
         </div>
 
-        {/* Display Title */}
-        <h1 className="hero-fade-in opacity-0 font-heading font-extrabold text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.08] tracking-[-0.03em] text-text-primary max-w-[960px] mb-6">
-          Team collaboration built for speed, <span className="text-primary font-semibold">priced for growth.</span>
+        {/* Display headline */}
+        <h1
+          className="hero-fade-in opacity-0 font-heading font-extrabold tracking-[-0.04em] leading-[1.03] max-w-[15ch] md:max-w-[19ch] text-[clamp(2.5rem,5.7vw,4.25rem)] mb-7"
+          style={{ color: 'var(--h-text)' }}
+        >
+          Team collaboration built for speed,{' '}
+          <span style={{ color: 'var(--h-accent)' }}>priced for growth.</span>
         </h1>
 
-        {/* Supportive Copy */}
-        <p className="hero-fade-in opacity-0 font-body text-[1.15rem] text-text-secondary leading-relaxed max-w-[680px] mb-8">
-          The all-in-one workspace for Indian teams — chat, channels, video calls, structured task tracking, and a live reporting org chart. Up to 70% cheaper than Slack & Teams.
+        {/* Supportive copy */}
+        <p
+          className="hero-fade-in opacity-0 font-body text-[1.1rem] md:text-[1.2rem] leading-[1.6] max-w-[620px] mb-10"
+          style={{ color: 'var(--h-text-2)' }}
+        >
+          The all-in-one workspace for Indian teams — chat, channels, video calls,
+          structured task tracking, and a live reporting org chart. Up to 70% cheaper
+          than Slack &amp; Teams.
         </p>
 
-        {/* Action CTAs */}
-        <div className="hero-fade-in opacity-0 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-6">
-          <Button
-            href="/contact"
-            variant="primary"
-            size="lg"
-            className="w-full sm:w-auto !bg-primary hover:!bg-primary/90 active:!bg-primary/80 !text-white !shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 border-0"
-          >
+        {/* CTAs */}
+        <div className="hero-fade-in opacity-0 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto mb-7">
+          <Link href="/contact" className="sq-btn sq-btn-primary sq-btn-lg group w-full sm:w-auto">
             Start free sandbox trial
-          </Button>
-          <Button
-            href="/contact"
-            variant="ghost"
-            size="lg"
-            className="w-full sm:w-auto !border-border !text-text-primary hover:!bg-bg-hover"
-          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </Link>
+          <Link href="/contact" className="sq-btn sq-btn-secondary sq-btn-lg w-full sm:w-auto">
             Book a migration call
-          </Button>
+          </Link>
         </div>
 
-        {/* Support context */}
-        <div className="hero-fade-in opacity-0 text-[0.82rem] text-text-muted font-medium mb-16 flex flex-wrap justify-center gap-4">
+        {/* Trust line */}
+        <div
+          className="hero-fade-in opacity-0 text-[0.82rem] font-medium mb-20 flex flex-wrap justify-center items-center gap-x-4 gap-y-1.5"
+          style={{ color: 'var(--h-text-3)' }}
+        >
           <span>Free 14-day trial</span>
-          <span className="text-border">•</span>
+          <span aria-hidden style={{ color: 'var(--h-border)' }}>•</span>
           <span>No credit card required</span>
-          <span className="text-border">•</span>
-          <span>Saves up to ₹6,500/user/yr</span>
+          <span aria-hidden style={{ color: 'var(--h-border)' }}>•</span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--h-success)' }} />
+            Saves up to <b className="font-semibold" style={{ color: 'var(--h-success)' }}>₹6,500/user/yr</b>
+          </span>
         </div>
 
-        {/* Premium Product Console Preview Wrapper */}
-        <div className="relative w-full max-w-[1040px] mt-4 z-10">
-          {/* Ambient glow behind console */}
-          <div className="absolute inset-0 rounded-xl pointer-events-none opacity-[0.06] blur-[60px] bg-gradient-to-r from-primary to-accent"></div>
+        {/* Product console preview */}
+        <div className="relative w-full max-w-[1060px] mt-4">
+          {/* natural radial bloom (theme-driven, no blur filter) */}
+          <div
+            aria-hidden
+            className="absolute -inset-x-24 -top-16 -bottom-8 pointer-events-none"
+            style={{ background: 'var(--h-bloom)' }}
+          />
+          {/* soft contact shadow — grounds the floating mockup */}
+          <div
+            aria-hidden
+            className="absolute left-1/2 -translate-x-1/2 -bottom-8 w-[80%] h-16 pointer-events-none"
+            style={{ background: 'var(--h-ground)' }}
+          />
 
           <div
             ref={consoleRef}
-            className="w-full bg-bg-surface border border-border rounded-xl shadow-lg overflow-hidden opacity-0 relative z-10"
+            className="relative z-10 w-full rounded-2xl overflow-hidden opacity-0 border"
+            style={{
+              background: 'var(--h-surface)',
+              borderColor: 'var(--h-border)',
+              boxShadow: 'var(--h-shadow)',
+            }}
           >
-            {/* macOS window header */}
-            <div className="flex items-center justify-between px-4 py-3 bg-bg-surface border-b border-border/80">
+            {/* window chrome */}
+            <div
+              className="flex items-center justify-between px-4 py-3 border-b"
+              style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface)' }}
+            >
               <div className="flex gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-error/80"></span>
-                <span className="w-3 h-3 rounded-full bg-warning/80"></span>
-                <span className="w-3 h-3 rounded-full bg-success/80"></span>
+                <span className="w-3 h-3 rounded-full" style={{ background: '#FF5F57' }} />
+                <span className="w-3 h-3 rounded-full" style={{ background: '#FEBC2E' }} />
+                <span className="w-3 h-3 rounded-full" style={{ background: '#28C840' }} />
               </div>
-              <div className="text-[0.76rem] font-heading font-semibold text-text-secondary">Squeako Workspace (Growth Plan)</div>
-              <div className="w-[44px]"></div>
+              <div className="text-[0.76rem] font-heading font-semibold" style={{ color: 'var(--h-text-2)' }}>
+                Squeako Workspace · Growth Plan
+              </div>
+              <div className="w-[52px]" />
             </div>
 
-            {/* Console inner layout */}
-            <div className="grid grid-cols-[200px_1fr] h-[480px] text-left text-text-primary">
-              {/* Console Sidebar */}
-              <div className="bg-bg-surface border-r border-border p-4 flex flex-col justify-between">
+            {/* console body */}
+            <div className="grid grid-cols-[210px_1fr] h-[480px] text-left" style={{ color: 'var(--h-text)' }}>
+              {/* sidebar */}
+              <div className="p-4 flex flex-col justify-between border-r" style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface-2)' }}>
                 <div className="flex flex-col gap-5">
-                  {/* Workspace Title */}
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded bg-primary-wash text-primary grid place-items-center text-[0.8rem] font-black font-heading">S</div>
-                    <b className="font-heading text-[0.88rem] leading-none text-text-primary">Squeako HQ</b>
+                    <div
+                      className="w-6 h-6 rounded-md grid place-items-center text-[0.8rem] font-black font-heading"
+                      style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}
+                    >
+                      S
+                    </div>
+                    <b className="font-heading text-[0.88rem] leading-none" style={{ color: 'var(--h-text)' }}>Squeako HQ</b>
                   </div>
 
-                  {/* Navigation Items */}
                   <div className="flex flex-col gap-1.5">
-                    <div className="flex items-center gap-2 px-2 py-1.5 rounded bg-bg-hover text-[0.84rem] font-semibold text-primary">
+                    <div
+                      className="flex items-center gap-2 px-2 py-1.5 rounded-md text-[0.84rem] font-semibold"
+                      style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}
+                    >
                       <span>💬</span> Channels
                     </div>
-                    <div className="text-text-secondary text-[0.84rem] pl-7 flex flex-col gap-2 font-body">
+                    <div className="pl-7 flex flex-col gap-2 text-[0.84rem] font-body" style={{ color: 'var(--h-text-2)' }}>
                       <span># general</span>
                       <span># engineering</span>
                       <span># product-updates</span>
                     </div>
-                    <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary mt-1">
-                      <span>📹</span> Video Meetings
-                    </div>
-                    <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary">
-                      <span>✅</span> Tasks & To-dos
-                    </div>
-                    <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-bg-hover text-[0.84rem] font-semibold text-text-secondary">
-                      <span>📊</span> Live Org Chart
-                    </div>
+                    {[
+                      ['📹', 'Video Meetings'],
+                      ['✅', 'Tasks & To-dos'],
+                      ['📊', 'Live Org Chart'],
+                    ].map(([ico, label]) => (
+                      <div key={label} className="flex items-center gap-2 px-2 py-1.5 rounded-md text-[0.84rem] font-semibold" style={{ color: 'var(--h-text-2)' }}>
+                        <span>{ico}</span> {label}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* User Identity Profile */}
-                <div className="flex items-center gap-2 pt-3 border-t border-border">
-                  <span className="w-7 h-7 rounded-full bg-primary-wash text-primary text-[0.78rem] font-bold grid place-items-center flex-none font-heading">AK</span>
+                <div className="flex items-center gap-2 pt-3 border-t" style={{ borderColor: 'var(--h-border)' }}>
+                  <span className="w-7 h-7 rounded-full grid place-items-center text-[0.78rem] font-bold font-heading flex-none" style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}>AK</span>
                   <div className="flex flex-col min-w-0">
-                    <span className="font-heading text-[0.82rem] font-bold truncate">Aditya Kumar</span>
-                    <span className="text-[0.68rem] text-text-muted leading-none block mt-0.5">Admin · Online</span>
+                    <span className="font-heading text-[0.82rem] font-bold truncate" style={{ color: 'var(--h-text)' }}>Aditya Kumar</span>
+                    <span className="text-[0.68rem] leading-none mt-0.5 flex items-center gap-1" style={{ color: 'var(--h-text-3)' }}>
+                      <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: 'var(--h-success)' }} /> Admin · Online
+                    </span>
                   </div>
                 </div>
               </div>
 
-              {/* Console Content Window (Chat + Threads Preview) */}
-              <div className="bg-bg-base p-5 flex flex-col justify-between">
-                <div className="flex flex-col gap-5 overflow-y-auto">
-                  {/* Header */}
-                  <div className="flex items-center justify-between border-b border-border pb-3">
+              {/* content */}
+              <div className="p-5 flex flex-col justify-between" style={{ background: 'var(--h-bg)' }}>
+                <div className="flex flex-col gap-5 overflow-hidden">
+                  <div className="flex items-center justify-between border-b pb-3" style={{ borderColor: 'var(--h-border)' }}>
                     <div>
-                      <h3 className="font-heading text-[0.95rem] font-extrabold text-text-primary"># general</h3>
-                      <p className="text-text-secondary text-[0.76rem] font-body mt-0.5">Company-wide announcements and updates</p>
+                      <h3 className="font-heading text-[0.95rem] font-extrabold" style={{ color: 'var(--h-text)' }}># general</h3>
+                      <p className="text-[0.76rem] font-body mt-0.5" style={{ color: 'var(--h-text-2)' }}>Company-wide announcements and updates</p>
                     </div>
-                    <span className="text-[0.76rem] text-primary font-bold bg-primary-wash px-2.5 py-1 rounded-full">12 Members Online</span>
+                    <span className="text-[0.74rem] font-bold px-2.5 py-1 rounded-full" style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}>
+                      12 online
+                    </span>
                   </div>
 
-                  {/* Chat Feed */}
                   <div className="flex flex-col gap-4">
                     <div className="flex gap-3">
-                      <span className="w-8 h-8 rounded-full bg-bg-surface border border-border text-text-primary font-bold text-[0.84rem] grid place-items-center flex-none font-heading">RM</span>
+                      <span className="w-8 h-8 rounded-full grid place-items-center font-bold text-[0.82rem] font-heading flex-none border" style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface-2)', color: 'var(--h-text)' }}>RM</span>
                       <div className="flex flex-col">
                         <div className="flex items-baseline gap-2">
-                          <b className="font-heading text-[0.86rem] font-bold">Rohan Mehta</b>
-                          <span className="text-text-muted text-[0.68rem] font-body">11:24 AM</span>
+                          <b className="font-heading text-[0.86rem] font-bold" style={{ color: 'var(--h-text)' }}>Rohan Mehta</b>
+                          <span className="text-[0.68rem] font-body" style={{ color: 'var(--h-text-3)' }}>11:24 AM</span>
                         </div>
-                        <p className="text-text-secondary text-[0.88rem] mt-1 leading-relaxed font-body">
-                          Hey team, did we align on the GST invoice format for next month's billing cycle?
+                        <p className="text-[0.88rem] mt-1 leading-relaxed font-body" style={{ color: 'var(--h-text-2)' }}>
+                          Hey team, did we align on the GST invoice format for next month&apos;s billing cycle?
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex gap-3 bg-primary-wash/40 p-3 rounded-lg border border-primary/10">
-                      <span className="w-8 h-8 rounded-full bg-primary-wash text-primary font-bold text-[0.84rem] grid place-items-center flex-none font-heading">AK</span>
+                    <div className="flex gap-3 p-3 rounded-xl border" style={{ background: 'var(--h-card)', borderColor: 'var(--h-card-border)' }}>
+                      <span className="w-8 h-8 rounded-full grid place-items-center font-bold text-[0.82rem] font-heading flex-none" style={{ background: 'var(--h-accent-wash)', color: 'var(--h-accent)' }}>AK</span>
                       <div className="flex flex-col">
                         <div className="flex items-baseline gap-2">
-                          <b className="font-heading text-[0.86rem] font-bold text-primary">Aditya Kumar</b>
-                          <span className="text-text-muted text-[0.68rem] font-body">11:26 AM</span>
+                          <b className="font-heading text-[0.86rem] font-bold" style={{ color: 'var(--h-accent)' }}>Aditya Kumar</b>
+                          <span className="text-[0.68rem] font-body" style={{ color: 'var(--h-text-3)' }}>11:26 AM</span>
                         </div>
-                        <p className="text-text-secondary text-[0.88rem] mt-1 leading-relaxed font-body">
-                          Yes! Resolved. We have configured direct GST invoicing inside Squeako's growth panel.
-                          I've also created a task for the finance team to audit the INR transaction accounts.
+                        <p className="text-[0.88rem] mt-1 leading-relaxed font-body" style={{ color: 'var(--h-text-2)' }}>
+                          Yes! Resolved. We&apos;ve configured direct GST invoicing inside Squeako&apos;s growth panel.
+                          I&apos;ve also created a task for the finance team to audit the INR transaction accounts.
                         </p>
                         <div className="flex gap-2.5 mt-2.5">
-                          <span className="inline-flex items-center gap-1.5 text-[0.75rem] font-bold text-primary bg-primary-wash px-2 py-0.5 rounded border border-primary/20">
-                            ✅ Task: Audit INR Accounts (Assigned to Finance)
+                          <span className="inline-flex items-center gap-1.5 text-[0.74rem] font-bold px-2 py-0.5 rounded-md border" style={{ color: 'var(--h-success)', background: 'color-mix(in srgb, var(--h-success) 12%, transparent)', borderColor: 'color-mix(in srgb, var(--h-success) 28%, transparent)' }}>
+                            ✅ Task: Audit INR Accounts · Finance
                           </span>
                         </div>
                       </div>
@@ -195,13 +240,15 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Chat Input Area */}
-                <div className="border border-border rounded-lg bg-bg-surface p-2 flex items-center justify-between mt-4">
-                  <span className="text-text-muted text-[0.84rem] pl-2 font-body">Message # general...</span>
-                  <div className="flex gap-2">
-                    <span className="w-7 h-7 rounded hover:bg-bg-hover grid place-items-center text-text-secondary cursor-pointer">🎤</span>
-                    <span className="w-7 h-7 rounded hover:bg-bg-hover grid place-items-center text-text-secondary cursor-pointer">📹</span>
-                    <span className="w-7.5 h-7.5 rounded bg-primary text-white font-bold text-[0.82rem] hover:bg-primary/95 active:scale-95 transition-all grid place-items-center px-3.5 cursor-pointer select-none">Send</span>
+                {/* composer */}
+                <div className="rounded-xl p-2 flex items-center justify-between mt-4 border" style={{ borderColor: 'var(--h-border)', background: 'var(--h-surface)' }}>
+                  <span className="text-[0.84rem] pl-2 font-body" style={{ color: 'var(--h-text-3)' }}>Message # general…</span>
+                  <div className="flex gap-2 items-center">
+                    <span className="w-7 h-7 rounded-md grid place-items-center cursor-pointer" style={{ color: 'var(--h-text-2)' }}>🎤</span>
+                    <span className="w-7 h-7 rounded-md grid place-items-center cursor-pointer" style={{ color: 'var(--h-text-2)' }}>📹</span>
+                    <span className="rounded-md font-bold text-[0.82rem] grid place-items-center px-3.5 py-1.5 cursor-pointer select-none" style={{ background: 'var(--h-accent-solid)', color: '#fff' }}>
+                      Send
+                    </span>
                   </div>
                 </div>
               </div>

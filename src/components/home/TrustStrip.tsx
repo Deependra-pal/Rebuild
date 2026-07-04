@@ -1,105 +1,77 @@
-import React from 'react';
-import Badge from '../shared/Badge';
-
 export default function TrustStrip() {
   const logos = [
     'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
     'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
-    'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate'
+    'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
+  ];
+
+  const ratings = [
+    { score: '4.8', source: 'on G2' },
+    { score: '4.7', source: 'on Capterra' },
+    { score: '4.6', source: 'on Google' },
+  ];
+
+  const badges = [
+    { label: 'DPDP-ready', path: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' },
+    { label: 'ISO 27001', path: 'M9 12l2 2 4-4', circle: true },
+    { label: 'SOC 2 Certified', rect: true },
+    { label: 'Data in India', path: 'M2 12h20', circle: true },
   ];
 
   return (
-    <div className="bg-transparent pt-2 pb-12 md:pt-4 md:pb-16 overflow-hidden relative">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-8">
-        <div className="text-center reveal">
-          {/* Section subtitle */}
-          <p className="font-heading text-[0.72rem] tracking-[0.16em] uppercase text-text-muted mb-6 font-semibold">
-            Trusted by growing teams across India
-          </p>
+    <div className="relative px-6 md:px-8 pt-6 pb-16 md:pb-20 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto text-center reveal">
+        <p className="font-heading text-[0.72rem] tracking-[0.18em] uppercase text-text-muted mb-8 font-semibold">
+          Trusted by growing teams across India
+        </p>
 
-          {/* Scrolling Marquee */}
-          <div className="relative w-full overflow-hidden py-2 my-2 marquee-container">
-            {/* Fading overlays to blend with surface */}
-            <div className="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#060A14] to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#060A14] to-transparent z-10 pointer-events-none"></div>
-
-            <div className="flex gap-14 animate-marquee whitespace-nowrap">
-              {logos.map((logo, index) => (
-                <span
-                  key={index}
-                  className="flex items-center gap-2.5 font-heading font-extrabold text-[1.4rem] text-text-secondary/70 hover:text-text-primary transition-colors shrink-0 select-none"
-                >
-                  <span className="w-5.5 h-5.5 rounded-md bg-text-secondary/20 hover:bg-primary/20 shrink-0 transition-colors"></span>
-                  {logo}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Social Proof ratings strip */}
-          <div className="flex flex-wrap justify-center gap-3 mt-8 mb-5">
-            {[
-              { score: '4.8', source: 'on G2' },
-              { score: '4.7', source: 'on Capterra' },
-              { score: '4.6', source: 'on Google' },
-            ].map((rating) => (
+        {/* Marquee — fades into the page canvas, no hard edges */}
+        <div className="relative w-full overflow-hidden py-2 marquee-container">
+          <div
+            className="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"
+            style={{ background: 'linear-gradient(to right, var(--sq-canvas), transparent)' }}
+          />
+          <div
+            className="absolute inset-y-0 right-0 w-32 z-10 pointer-events-none"
+            style={{ background: 'linear-gradient(to left, var(--sq-canvas), transparent)' }}
+          />
+          <div className="flex gap-14 animate-marquee whitespace-nowrap">
+            {logos.map((logo, index) => (
               <span
-                key={rating.source}
-                className="inline-flex items-center gap-2 bg-bg-card border border-border rounded-full py-1.5 px-4 shadow-sm text-[0.84rem] font-semibold text-text-primary"
+                key={index}
+                className="flex items-center gap-2.5 font-heading font-extrabold text-[1.35rem] text-text-secondary/60 hover:text-text-primary transition-colors shrink-0 select-none"
               >
-                <span className="text-warning">★</span>
-                <b className="font-heading text-text-primary font-bold">{rating.score}</b>
-                <span className="text-text-secondary font-medium">{rating.source}</span>
+                <span className="w-5 h-5 rounded-md bg-text-secondary/15 shrink-0" />
+                {logo}
               </span>
             ))}
           </div>
+        </div>
 
-          {/* Trust Compliance badges */}
-          <div className="flex flex-wrap justify-center gap-2 mt-4">
-            <Badge
-              variant="trust"
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              }
+        {/* Ratings + compliance, one refined row */}
+        <div className="flex flex-wrap justify-center items-center gap-2.5 mt-10">
+          {ratings.map((r) => (
+            <span key={r.source} className="sq-card inline-flex items-center gap-2 rounded-full py-1.5 px-4 text-[0.84rem]">
+              <span className="text-warning">★</span>
+              <b className="font-heading text-text-primary font-bold">{r.score}</b>
+              <span className="text-text-secondary font-medium">{r.source}</span>
+            </span>
+          ))}
+          <span className="w-px h-5 mx-1 hidden sm:block" style={{ background: 'var(--color-border)' }} />
+          {badges.map((b) => (
+            <span
+              key={b.label}
+              className="inline-flex items-center gap-1.5 rounded-full py-1.5 px-3.5 text-[0.78rem] font-semibold font-heading text-primary"
+              style={{ background: 'var(--color-primary-wash)', border: '1px solid var(--color-primary-wash)' }}
             >
-              DPDP-ready
-            </Badge>
-            <Badge
-              variant="trust"
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
-                  <path d="M9 12l2 2 4-4" />
-                  <circle cx="12" cy="12" r="10" />
-                </svg>
-              }
-            >
-              ISO 27001
-            </Badge>
-            <Badge
-              variant="trust"
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              }
-            >
-              SOC 2 Certified
-            </Badge>
-            <Badge
-              variant="trust"
-              icon={
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M2 12h20" />
-                </svg>
-              }
-            >
-              Data in India
-            </Badge>
-          </div>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
+                {b.rect && <><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>}
+                {b.circle && <circle cx="12" cy="12" r="10" />}
+                {b.path && <path d={b.path} />}
+              </svg>
+              {b.label}
+            </span>
+          ))}
         </div>
       </div>
     </div>

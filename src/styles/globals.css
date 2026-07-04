@@ -1,22 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  /* Squeako Ocean Glass — Premium Elevation System */
-  /* Base canvas: deep navy-black, not pure black. Has blue DNA. */
-  --color-bg-base: #060A14;
-  /* Surface: elevated navy panel, 8% brighter than base */
-  --color-bg-surface: #0C1221;
-  /* Card: floating above surface, clear depth perception */
-  --color-bg-card: #101828;
-  /* Elevated: highest elevation, interactive zones */
-  --color-bg-elevated: #151E30;
-  /* Hover: interactive state lift */
-  --color-bg-hover: #1B2540;
+  /* ══════════════════════════════════════════════════════════
+     SQUEAKO ENTERPRISE COLOR SYSTEM
+     Exact specification — do not modify without design approval.
+     Every token is intentional.
+  ═══════════════════════════════════════════════════════════ */
 
-  --color-border: rgba(255, 255, 255, 0.05);
-  /* Hairline borders */
+  /* Global Canvas */
+  --color-bg-base: #06080C;
+  /* Primary website background */
+
+  /* Surface Elevation System */
+  --color-bg-surface: #0A0F14;
+  /* Level 1: Trust strip, base panels */
+  --color-bg-card: #151D26;
+  /* Card background */
+  --color-bg-elevated: #1B2430;
+  /* Card hover / elevated state */
+  --color-bg-hover: #1B2430;
+  /* Interactive hover */
+
+  /* Border System */
+  --color-border: rgba(255, 255, 255, 0.06);
+  /* Section dividers */
   --color-border-hover: rgba(255, 255, 255, 0.12);
+  /* Hover borders */
   --color-border-focus: #0A84FF;
+  /* Focus ring */
 
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #8E939E;
@@ -122,8 +133,8 @@ h6 {
   --mint-deep: #0CE59E;
   --mint-wash: rgba(12, 229, 158, 0.08);
   --lilac: #12141C;
-  --paper: #060A14;
-  --card: #101828;
+  --paper: #06080C;
+  --card: #151D26;
   --muted: #8E939E;
   --muted-lt: #626B7A;
   --hairline: rgba(255, 255, 255, 0.05);
@@ -141,9 +152,9 @@ h6 {
   --box-lilac-border: rgba(255, 255, 255, 0.05);
   --box-mint-bg: #12141C;
   --box-mint-border: rgba(255, 255, 255, 0.05);
-  --box-dark-bg: #060A14;
-  --box-grad-bg: #151E30;
-  --page-hero-bg: #060A14;
+  --box-dark-bg: #06080C;
+  --box-grad-bg: #1B2430;
+  --page-hero-bg: #06080C;
 }
 
 html {
@@ -151,12 +162,13 @@ html {
 }
 
 body {
-  /* Ocean Glass Premium Canvas:
-     Deep navy-black base — not pure black.
-     Has blue DNA. Feels alive, not dead.
-     No grids, no patterns. Pure atmospheric depth.
+  /*
+    Enterprise Canvas: #06080C
+    Not pure black. Has subtle blue DNA.
+    No grids, no textures, no noise.
+    Sections create depth through their own backgrounds.
   */
-  background-color: #060A14;
+  background-color: #06080C;
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -477,11 +489,8 @@ div[class*="bg-white"][class*="rounded-[18px]"] span.text-muted {
   color: var(--muted) !important;
 }
 
-/* Navbar dropdown icon colors */
-nav span.bg-violet-soft {
-  color: #0A84FF !important;
-  background-color: rgba(10, 132, 255, 0.08) !important;
-}
+/* (legacy navbar icon-colour rule removed — the floating pill nav is styled
+   entirely in themes.css; this kept the old dark-blue chip look alive) */
 
 /* Premium Visual Design Classes */
 .glass-panel {
@@ -524,25 +533,9 @@ nav span.bg-violet-soft {
   background: radial-gradient(circle, rgba(10, 132, 255, 0.12) 0%, transparent 68%) !important;
 }
 
-/* Frosted glass navbar styling */
-nav.sticky {
-  background-color: rgba(8, 9, 12, 0.5) !important;
-  /* Transparent dark theme base */
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  /* Strong frosted glass blur */
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-  /* Glowing glass border */
-}
-
-/* Navbar menu item hover/active background and text color overrides */
-nav button.bg-violet-soft,
-nav a.bg-violet-soft,
-nav .hover\:bg-violet-soft:hover,
-nav [class*="hover:bg-violet-soft"]:hover {
-  background-color: #090D0C !important;
-  color: #D9E38A !important;
-}
+/* (legacy full-width frosted navbar + menu-item overrides removed.
+   The single, canonical navbar is the floating glass pill defined per theme
+   in themes.css → `html[data-theme] nav.sticky`.) */
 
 /* Input, select, and textarea styles for dark theme contrast */
 main#main input,

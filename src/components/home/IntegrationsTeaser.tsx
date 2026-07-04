@@ -1,88 +1,41 @@
-'use client';
+import Link from 'next/link';
+import { Eyebrow } from '../shared/Section';
 
-import React, { useEffect, useRef } from 'react';
-import Eyebrow from '../shared/Eyebrow';
-import Button from '../shared/Button';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+const tools = [
+  { letter: 'G', name: 'Google Calendar' },
+  { letter: 'D', name: 'Google Drive' },
+  { letter: 'M', name: 'Gmail' },
+  { letter: 'Z', name: 'Zapier' },
+  { letter: 'T', name: 'Trello' },
+  { letter: 'J', name: 'Jira' },
+  { letter: '🐙', name: 'GitHub' },
+  { letter: 'R', name: 'Razorpay' },
+];
 
 export default function IntegrationsTeaser() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo('.integ-chip',
-        { y: 20, opacity: 0, scale: 0.96 },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.7,
-          stagger: 0.06,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 85%',
-            once: true,
-          }
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const tools = [
-    { letter: 'G', name: 'Google Calendar' },
-    { letter: 'D', name: 'Google Drive' },
-    { letter: 'M', name: 'Gmail' },
-    { letter: 'Z', name: 'Zapier' },
-    { letter: 'T', name: 'Trello' },
-    { letter: 'J', name: 'Jira' },
-    { letter: '🐙', name: 'GitHub' },
-    { letter: 'R', name: 'Razorpay' },
-  ];
-
   return (
-    <section ref={containerRef} className="bg-transparent py-10 md:py-12 px-6 md:px-8 relative overflow-hidden">
-      {/* Background glow decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] rounded-full z-0 pointer-events-none opacity-20 blur-[130px] bg-gradient-to-r from-primary to-accent"></div>
-
-      <div className="max-w-[1200px] mx-auto relative z-10">
-
-        {/* Head */}
-        <div className="max-w-[800px] mx-auto mb-16 text-center flex flex-col items-center">
+    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+      <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center reveal">
+        {/* copy */}
+        <div className="flex flex-col text-left">
           <Eyebrow>Plays well with others</Eyebrow>
-          <h2 className="text-[clamp(1.8rem,3.8vw,2.6rem)] font-heading font-extrabold mt-4 mb-4 text-text-primary leading-tight">
+          <h2 className="text-[clamp(1.85rem,3.9vw,2.6rem)] font-heading font-extrabold tracking-[-0.035em] mt-5 mb-4 leading-[1.08] text-text-primary">
             Works with the tools you already use
           </h2>
+          <Link href="/integrations" className="sq-btn sq-btn-secondary sq-btn-md mt-2 self-start">
+            See all integrations &rarr;
+          </Link>
         </div>
 
-        {/* Chips Row */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
-          {tools.map((tool, idx) => (
-            <span
-              key={idx}
-              className="integ-chip opacity-0 flex items-center gap-3 bg-bg-elevated border border-border rounded-xl py-3 px-5 font-heading font-semibold text-[0.88rem] text-text-primary hover:-translate-y-0.5 hover:bg-bg-hover hover:border-border-hover hover:shadow-sm transition-all duration-150 select-none"
-            >
-              <span className="w-7 h-7 rounded bg-bg-surface border border-border/40 text-text-primary flex items-center justify-center font-bold text-[0.85rem] shrink-0">
-                {tool.letter}
-              </span>
-              {tool.name}
+        {/* logo grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {tools.map((t) => (
+            <span key={t.name} className="sq-card sq-card-hover flex flex-col items-center justify-center gap-2.5 py-6 px-3 text-center select-none">
+              <span className="w-11 h-11 rounded-xl grid place-items-center font-bold text-[1.05rem] text-text-primary" style={{ background: 'var(--color-bg-surface)', border: '1px solid var(--color-border)' }}>{t.letter}</span>
+              <span className="font-heading font-semibold text-[0.8rem] text-text-secondary leading-tight">{t.name}</span>
             </span>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button href="/integrations" variant="ghost" size="lg" className="!border-border !text-text-primary hover:!bg-bg-hover">
-            See all integrations &rarr;
-          </Button>
-        </div>
-
       </div>
     </section>
   );

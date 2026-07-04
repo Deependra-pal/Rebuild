@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Button from './Button';
-import Eyebrow from './Eyebrow';
+import { Eyebrow } from './Section';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -21,15 +20,15 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="bg-transparent py-20 md:py-32 px-6 md:px-8 relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center">
-        <div className="w-full bg-bg-card border border-border rounded-xl p-8 md:p-14 shadow-lg">
+    <section className="relative px-6 md:px-8 py-16 md:py-24 overflow-hidden">
+      <div className="max-w-[1200px] mx-auto relative z-10 reveal">
+        <div className="sq-panel p-8 md:p-14">
           <div className="max-w-[560px] mx-auto text-center">
             <Eyebrow>Stay in the loop</Eyebrow>
-            <h2 className="text-[clamp(1.6rem,3.2vw,2.2rem)] font-heading font-extrabold mt-3 mb-2 text-text-primary">
+            <h2 className="text-[clamp(1.6rem,3.2vw,2.2rem)] font-heading font-extrabold tracking-[-0.03em] mt-4 mb-2 text-text-primary">
               Tips for teams, once a month
             </h2>
-            <p className="text-text-secondary leading-relaxed mb-6 font-body">
+            <p className="text-text-secondary leading-relaxed mb-6">
               Practical playbooks and product updates, with no spam. Unsubscribe anytime.
             </p>
 
@@ -41,20 +40,17 @@ export default function Newsletter() {
                   placeholder="you@company.com"
                   aria-label="Email"
                   value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    setIsInvalid(false);
-                  }}
-                  className={`flex-1 py-3 px-4 rounded-lg border font-body text-[0.95rem] bg-bg-surface text-text-primary transition-all duration-150 outline-none focus:border-primary focus:shadow-focus ${isInvalid ? 'border-error' : 'border-border'
-                    }`}
+                  onChange={(e) => { setEmail(e.target.value); setIsInvalid(false); }}
+                  className="flex-1 py-3 px-4 rounded-xl text-[0.95rem] text-text-primary transition-all duration-150 outline-none focus:shadow-focus"
+                  style={{ background: 'var(--color-bg-surface)', border: `1px solid ${isInvalid ? 'var(--color-error)' : 'var(--color-border)'}` }}
                 />
-                <Button type="submit" variant="primary" className="!bg-primary hover:!bg-primary/90 active:!bg-primary/80 !text-white !shadow-sm hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200 border-0">
+                <button type="submit" className="sq-btn sq-btn-primary sq-btn-md">
                   Subscribe
-                </Button>
+                </button>
               </form>
             ) : (
               <p className="text-primary font-heading font-bold text-[0.9rem] mt-3">
-                ✓ You're subscribed — see you in your inbox!
+                ✓ You&apos;re subscribed — see you in your inbox!
               </p>
             )}
           </div>

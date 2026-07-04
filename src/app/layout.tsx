@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, Sora, Space_Mono, Poppins } from 'next/font/google';
 import '@/styles/globals.css';
+import '@/styles/themes.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ThemePreviewSwitcher from '@/components/dev/ThemePreviewSwitcher';
 import { siteMetadata, softwareAppSchema, faqSchema } from '@/config/site';
 
 const poppins = Poppins({
@@ -38,6 +40,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
+      data-theme="light"
       className={`${poppins.variable} ${inter.variable} ${sora.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <head>
@@ -51,6 +54,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <ThemePreviewSwitcher />
         <Navbar />
         {children}
         <Footer />

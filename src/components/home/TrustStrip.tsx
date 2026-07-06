@@ -1,9 +1,51 @@
 export default function TrustStrip() {
   const logos = [
-    'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
-    'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
-    'Kettle', 'Routely', 'Finbar', 'Saanjh', 'Nimbus HR', 'Bytecrate',
+    { name: 'Kettle', icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="w-[19px] h-[19px] shrink-0 text-text-secondary/60 group-hover:text-primary transition-colors">
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+        <path d="M5 8h12v9a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V8z" />
+        <path d="M6 2v6" />
+        <path d="M14 2v6" />
+      </svg>
+    )},
+    { name: 'Routely', icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="w-[19px] h-[19px] shrink-0 text-text-secondary/60 group-hover:text-primary transition-colors">
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="18" cy="18" r="3" />
+        <path d="M9 6h4a2 2 0 0 1 2 2v8a2 2 0 0 0 2 2" />
+      </svg>
+    )},
+    { name: 'Finbar', icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="w-[19px] h-[19px] shrink-0 text-text-secondary/60 group-hover:text-primary transition-colors">
+        <path d="M12 20V10" />
+        <path d="M18 20V4" />
+        <path d="M6 20v-6" />
+      </svg>
+    )},
+    { name: 'Saanjh', icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="w-[19px] h-[19px] shrink-0 text-text-secondary/60 group-hover:text-primary transition-colors">
+        <path d="M17 18a5 5 0 0 0-10 0" />
+        <path d="M12 2v7" />
+        <path d="M4.9 9.9l4.3 1.4" />
+        <path d="M19.1 9.9l-4.3 1.4" />
+        <path d="M2 18h20" />
+      </svg>
+    )},
+    { name: 'Nimbus HR', icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="w-[19px] h-[19px] shrink-0 text-text-secondary/60 group-hover:text-primary transition-colors">
+        <path d="M17.5 19A3.5 3.5 0 0 0 21 15.5c0-2.79-2.54-4.5-5-4.5-.42 0-.83.07-1.22.2.39-1.92.05-3.83-1-5.2-1.29-1.7-3.64-2.1-5.28-1-1.39.9-2 2.5-1.93 4.1C4.44 9.4 3 11 3 13a4 4 0 0 0 4 4h10.5" />
+      </svg>
+    )},
+    { name: 'Bytecrate', icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="w-[19px] h-[19px] shrink-0 text-text-secondary/60 group-hover:text-primary transition-colors">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+        <path d="M3.27 6.96L12 12.01l8.73-5.05" />
+        <path d="M12 22.08V12" />
+      </svg>
+    )}
   ];
+
+  const duplicatedLogos = [...logos, ...logos, ...logos];
 
   const ratings = [
     { score: '4.8', source: 'on G2' },
@@ -36,13 +78,13 @@ export default function TrustStrip() {
             style={{ background: 'linear-gradient(to left, var(--sq-canvas), transparent)' }}
           />
           <div className="flex gap-14 animate-marquee whitespace-nowrap">
-            {logos.map((logo, index) => (
+            {duplicatedLogos.map((logo, index) => (
               <span
                 key={index}
-                className="flex items-center gap-2.5 font-heading font-extrabold text-[1.35rem] text-text-secondary/60 hover:text-text-primary transition-colors shrink-0 select-none"
+                className="group flex items-center gap-2.5 font-heading font-extrabold text-[1.35rem] text-text-secondary/60 hover:text-text-primary transition-colors shrink-0 select-none cursor-pointer"
               >
-                <span className="w-5 h-5 rounded-md bg-text-secondary/15 shrink-0" />
-                {logo}
+                {logo.icon}
+                {logo.name}
               </span>
             ))}
           </div>

@@ -40,7 +40,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      data-theme="light"
+      data-theme="ivory"
       className={`${poppins.variable} ${inter.variable} ${sora.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <head>

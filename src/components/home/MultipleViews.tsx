@@ -85,7 +85,7 @@ export default function MultipleViews() {
   const d = data[active];
 
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface-alt multiple-views-section relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center reveal">
         <SectionHead
           eyebrow="Your work, your way"

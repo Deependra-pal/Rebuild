@@ -189,7 +189,7 @@ export default function FeatureTabs() {
   const p = panels[active];
 
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="feature-tabs-light-section relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 flex flex-col items-center reveal">
         <SectionHead
           eyebrow="Take a closer look"

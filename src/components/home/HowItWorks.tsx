@@ -27,64 +27,90 @@ export default function HowItWorks() {
 
             if (items.length === 0 || !timeline) return;
 
-            // Helper to calculate the top alignment Y offset dynamically
+            // Centering Y offset: Center active card inside container height
             const getTargetY = (el: HTMLElement) => {
-              return -el.offsetTop;
+              const containerHeight = containerRef.current?.offsetHeight || 540;
+              const cardCenter = el.offsetTop + el.offsetHeight / 2;
+              return containerHeight / 2 - cardCenter;
             };
 
-            // Set initial state for all items except the first one
-            gsap.set(cards.slice(1), { opacity: 0.15, scale: 0.98 });
-            gsap.set(nodes.slice(1), { scale: 0.7, opacity: 0.5 });
-            
-            // Set first step card aligned at the top of the container
-            gsap.set(timeline, { y: 0 });
+            // Set initial state for cards (inactive cards are faded & scaled down)
+            gsap.set(cards.slice(1), { opacity: 0.25, scale: 0.96 });
+            gsap.set(nodes.slice(1), {
+              backgroundColor: 'var(--sq-elevated)',
+              borderColor: 'var(--color-border)',
+              color: 'var(--color-text-secondary)',
+              scale: 0.9
+            });
+
+            // Active state for card 1 at launch
+            gsap.set(nodes[0], {
+              backgroundColor: 'var(--color-primary)',
+              borderColor: 'var(--color-primary)',
+              color: '#ffffff',
+              scale: 1.1
+            });
+            gsap.set(timeline, { y: getTargetY(items[0]) });
 
             // Create ScrollTrigger pin timeline
             const mainTl = gsap.timeline({
               scrollTrigger: {
                 trigger: sectionRef.current,
-                start: 'top 12%',
-                end: '+=2800', // Scroll space duration
+                start: 'top top',
+                end: '+=2200', // Perfect scroll duration
                 pin: true,
-                scrub: 1.6, // Inertial lag for smoothness
+                scrub: 1.2, // Premium inertial scroll damping
               }
             });
 
-            // Transition from step to step
+            // Animate primary timeline progress line
+            mainTl.to('#timeline-progress', {
+              height: '92%',
+              ease: 'none'
+            }, 0);
+
+            // Step transition loops
             items.forEach((item, index) => {
               if (index === 0) return;
 
-              // Step index transition
+              const label = `step-${index}`;
+
+              // Set previous step inactive
               mainTl.to(cards[index - 1], {
-                opacity: 0.15,
-                scale: 0.98,
+                opacity: 0.25,
+                scale: 0.96,
                 duration: 0.8,
-              }, `step-${index}`);
+              }, label);
 
               mainTl.to(nodes[index - 1], {
-                scale: 0.7,
-                opacity: 0.5,
+                backgroundColor: 'var(--sq-elevated)',
+                borderColor: 'var(--color-border)',
+                color: 'var(--color-text-secondary)',
+                scale: 0.9,
                 duration: 0.8,
-              }, `step-${index}`);
+              }, label);
 
+              // Set current step active
               mainTl.to(cards[index], {
                 opacity: 1,
                 scale: 1,
                 duration: 0.8,
-              }, `step-${index}`);
+              }, label);
 
               mainTl.to(nodes[index], {
-                scale: 1,
-                opacity: 1,
+                backgroundColor: 'var(--color-primary)',
+                borderColor: 'var(--color-primary)',
+                color: '#ffffff',
+                scale: 1.1,
                 duration: 0.8,
-              }, `step-${index}`);
+              }, label);
 
-              // Slide the timeline container up to align the active card to the top
+              // Slide active card to exact vertical center
               mainTl.to(timeline, {
                 y: getTargetY(item),
                 duration: 1.2,
-                ease: 'power1.inOut',
-              }, `step-${index}`);
+                ease: 'power2.inOut',
+              }, label);
             });
 
           } else {
@@ -96,7 +122,7 @@ export default function HowItWorks() {
 
               if (!node || !card) return;
 
-              gsap.fromTo(node, 
+              gsap.fromTo(node,
                 { scale: 0.5, opacity: 0 },
                 {
                   scale: 1,
@@ -206,11 +232,11 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section ref={sectionRef} className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-20">
+    <section ref={sectionRef} className="sq-surface-alt relative px-6 md:px-8 py-20 md:py-28 lg:py-0 lg:min-h-screen lg:flex lg:items-center overflow-hidden">
+      <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-20 items-center w-full">
 
-        {/* Intro (sticky on desktop) */}
-        <div className="flex flex-col text-left lg:sticky lg:top-28 lg:self-start">
+        {/* Intro */}
+        <div className="flex flex-col text-left">
           <Eyebrow>Onboarding &amp; setup</Eyebrow>
           <h2 className="text-[clamp(2rem,3.9vw,2.75rem)] font-heading font-extrabold tracking-[-0.035em] mt-5 mb-5 leading-[1.08] text-text-primary">
             How your team gets on Squeako
@@ -221,25 +247,45 @@ export default function HowItWorks() {
         </div>
 
         {/* Vertical timeline viewport */}
-        <div 
-          ref={containerRef} 
-          className="relative pl-14 lg:max-h-[540px] lg:overflow-hidden"
+        <div
+          ref={containerRef}
+          className="relative pl-14 lg:max-h-[540px] lg:overflow-hidden w-full"
           style={{
-            maskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 100%)'
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
           }}
         >
-          {/* rail */}
+          {/* Base rail */}
           <div className="absolute left-[19px] top-3 bottom-3 w-px" style={{ background: 'var(--color-border)' }} />
-          
+
+          {/* Active progress rail */}
+          <div
+            id="timeline-progress"
+            className="absolute left-[19px] top-3 w-px origin-top transition-all"
+            style={{
+              background: 'var(--color-primary)',
+              height: '0%'
+            }}
+          />
+
           {/* Animated wrapper */}
           <div ref={timelineRef} className="flex flex-col gap-6">
             {steps.map((step) => (
               <div key={step.num} className="timeline-item relative">
                 {/* node */}
-                <div className="timeline-node absolute -left-14 top-1 w-10 h-10 rounded-full grid place-items-center font-heading font-bold text-[0.9rem] text-white z-10" style={{ background: 'var(--color-primary)', boxShadow: '0 0 0 5px var(--sq-canvas), 0 8px 20px -6px var(--color-primary-wash)' }}>
+                <div
+                  className="timeline-node absolute -left-14 top-1.5 w-9 h-9 rounded-full border-2 grid place-items-center font-heading font-bold text-[0.88rem] z-10"
+                  style={{
+                    background: 'var(--sq-elevated)',
+                    borderColor: 'var(--color-border)',
+                    color: 'var(--color-text-secondary)',
+                    boxShadow: '0 0 0 4px var(--sq-canvas)',
+                    transition: 'background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease'
+                  }}
+                >
                   {step.num}
                 </div>
+
                 <div className="timeline-card sq-card sq-card-hover p-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="font-heading text-[0.66rem] tracking-[0.1em] uppercase text-primary font-bold">{step.tag}</span>

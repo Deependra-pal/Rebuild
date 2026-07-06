@@ -24,9 +24,10 @@ html[data-theme="ivory"] {
   /* Canvas & Surfaces */
   --sq-canvas: #F6F4F0;
   /* Warm ivory — like premium paper */
-  --sq-section-surface: linear-gradient(to right, #EEECE6 0%, #FAF9F7 50%, #EEECE6 100%);
+  --sq-section-surface: linear-gradient(140deg, #FFFFFF 0%, #FAF9F7 100%);
   /* Stone-warm — one clear step below canvas */
-  --sq-section-surface-alt: linear-gradient(to right, #FAF9F7 0%, #F6F4F0 50%, #FAF9F7 100%);
+  --sq-section-surface-alt: linear-gradient(140deg, #F0EEE9 0%, #E5E1D8 100%);
+  --sq-section-surface-contrast: linear-gradient(140deg, #EAE7E0 0%, #DBD7CE 100%);
   /* Near-canvas — lighter alternation */
   --sq-elevated: #FFFFFF;
   /* Pure white — panels feel lifted, clean */
@@ -56,6 +57,7 @@ html[data-theme="ivory"] {
   --color-primary-hover: #1E44B8;
   --color-primary-active: #183898;
   --color-primary-wash: rgba(41, 82, 204, 0.07);
+  --sq-primary-shadow: 41, 82, 204;
   --color-secondary: #56524C;
   --color-accent: #2952CC;
   --color-success: #1A8855;
@@ -71,9 +73,9 @@ html[data-theme="ivory"] {
   --color-disabled-text: #B0ADA7;
 
   /* Shadows — warm-toned, almost invisible at rest */
-  --sq-card-shadow: 0 1px 2px rgba(44, 38, 26, 0.05), 0 8px 24px -14px rgba(44, 38, 26, 0.10);
-  --sq-card-shadow-hover: 0 4px 12px rgba(44, 38, 26, 0.07), 0 24px 52px -20px rgba(44, 38, 26, 0.16);
-  --sq-panel-shadow: 0 2px 8px rgba(44, 38, 26, 0.05), 0 40px 80px -44px rgba(44, 38, 26, 0.16);
+  --sq-card-shadow: 0 1px 3px rgba(44, 38, 26, 0.04), 0 8px 24px -12px rgba(44, 38, 26, 0.08), inset 0 1px 0 #ffffff;
+  --sq-card-shadow-hover: 0 12px 30px -10px rgba(44, 38, 26, 0.08), 0 24px 60px -20px rgba(44, 38, 26, 0.12), inset 0 1px 0 #ffffff;
+  --sq-panel-shadow: 0 4px 12px rgba(44, 38, 26, 0.04), 0 24px 60px -10px rgba(44, 38, 26, 0.10), inset 0 1px 0 #ffffff;
   --shadow-sm: 0 1px 2px rgba(44, 38, 26, 0.06);
   --shadow-md: 0 4px 12px rgba(44, 38, 26, 0.10);
   --shadow-lg: 0 12px 32px rgba(44, 38, 26, 0.14);
@@ -94,7 +96,7 @@ html[data-theme="ivory"] {
   --sq-cta-grad: #1C1A14;
 
   /* Card background alias */
-  --sq-card-bg: #FFFFFF;
+  --sq-card-bg: linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 100%);
 
   /* Legacy token aliases — mapped for component compatibility */
   --card: #FFFFFF;
@@ -125,7 +127,7 @@ html[data-theme="ivory"] {
 
 /* Hero stage — Ivory */
 html[data-theme="ivory"] .hero-stage {
-  --h-bg: transparent;
+  --h-bg: linear-gradient(140deg, #FFFFFF 0%, #F5F1E9 50%, #E6DFD3 100%);
   --h-text: #1C1A16;
   --h-text-2: #56524C;
   --h-text-3: #8A867E;
@@ -144,10 +146,10 @@ html[data-theme="ivory"] .hero-stage {
   --h-badge-border: rgba(44, 38, 26, 0.10);
   --h-badge-text: #56524C;
   --h-chip-shadow: 0 1px 2px rgba(44, 38, 26, 0.06), 0 8px 20px -10px rgba(44, 38, 26, 0.14);
-  --h-shadow: 0 2px 4px rgba(44, 38, 26, 0.04), 0 16px 40px -14px rgba(44, 38, 26, 0.12), 0 56px 100px -36px rgba(44, 38, 26, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  --h-ground: none;
-  --h-bloom: none;
-  --h-glow: none;
+  --h-shadow: 0 8px 30px rgba(44, 38, 26, 0.06), 0 30px 70px rgba(44, 38, 26, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  --h-ground: radial-gradient(ellipse at 50% 50%, rgba(44, 38, 26, 0.08) 0%, transparent 60%);
+  --h-bloom: radial-gradient(ellipse at 50% 50%, rgba(41, 82, 204, 0.04) 0%, transparent 65%);
+  --h-glow: radial-gradient(circle at 50% -20%, rgba(41, 82, 204, 0.06) 0%, rgba(212, 163, 89, 0.04) 45%, transparent 70%);
 }
 
 
@@ -161,9 +163,10 @@ html[data-theme="sand"] {
 
   --sq-canvas: #EEE6D8;
   /* Rich warm sand — distinctly warmer than ivory */
-  --sq-section-surface: linear-gradient(to right, #E4D8C8 0%, #F6F0E8 50%, #E4D8C8 100%);
+  --sq-section-surface: linear-gradient(140deg, #FDF9F3 0%, #F5EFE4 100%);
   /* Deep taupe — real editorial break */
-  --sq-section-surface-alt: linear-gradient(to right, #F6F0E8 0%, #EEE6D8 50%, #F6F0E8 100%);
+  --sq-section-surface-alt: linear-gradient(140deg, #EAE0D0 0%, #DDD2C0 100%);
+  --sq-section-surface-contrast: linear-gradient(140deg, #DDD2C0 0%, #C8BAA4 100%);
   --sq-page-bg: #EEE6D8;
   --sq-body-bg: radial-gradient(circle at 18% 22%, rgba(184, 82, 30, 0.09) 0%, transparent 52%), radial-gradient(circle at 82% 78%, rgba(88, 60, 32, 0.12) 0%, transparent 52%), #EEE6D8;
   /* Warm cream — breathing room */
@@ -197,6 +200,7 @@ html[data-theme="sand"] {
   --color-primary-hover: #9E4418;
   --color-primary-active: #883A14;
   --color-primary-wash: rgba(184, 82, 30, 0.07);
+  --sq-primary-shadow: 184, 82, 30;
   --color-secondary: #6A4E36;
   --color-accent: #B8521E;
   --color-success: #3A7A52;
@@ -211,9 +215,9 @@ html[data-theme="sand"] {
   --color-disabled-text: #B8A898;
 
   /* Shadows — brown-warm */
-  --sq-card-shadow: 0 1px 2px rgba(88, 60, 32, 0.05), 0 8px 24px -14px rgba(88, 60, 32, 0.11);
-  --sq-card-shadow-hover: 0 4px 12px rgba(88, 60, 32, 0.08), 0 24px 52px -20px rgba(88, 60, 32, 0.18);
-  --sq-panel-shadow: 0 2px 8px rgba(88, 60, 32, 0.06), 0 40px 80px -44px rgba(88, 60, 32, 0.18);
+  --sq-card-shadow: 0 1px 3px rgba(88, 60, 32, 0.04), 0 8px 24px -12px rgba(88, 60, 32, 0.09), inset 0 1px 0 #ffffff;
+  --sq-card-shadow-hover: 0 12px 30px -10px rgba(88, 60, 32, 0.10), 0 24px 60px -20px rgba(88, 60, 32, 0.14), inset 0 1px 0 #ffffff;
+  --sq-panel-shadow: 0 4px 12px rgba(88, 60, 32, 0.05), 0 24px 60px -10px rgba(88, 60, 32, 0.12), inset 0 1px 0 #ffffff;
   --shadow-sm: 0 1px 2px rgba(88, 60, 32, 0.06);
   --shadow-md: 0 4px 12px rgba(88, 60, 32, 0.10);
   --shadow-lg: 0 12px 32px rgba(88, 60, 32, 0.14);
@@ -232,7 +236,8 @@ html[data-theme="sand"] {
   --sq-footer-border: rgba(255, 255, 255, 0.10);
   --sq-cta-grad: #201608;
 
-  --sq-card-bg: #FDF9F3;
+  /* Card background alias */
+  --sq-card-bg: linear-gradient(180deg, #FDF9F3 0%, #F5EFE4 100%);
 
   --card: #FDF9F3;
   --ink: #261A0E;
@@ -261,7 +266,7 @@ html[data-theme="sand"] {
 
 /* Hero stage — Sand */
 html[data-theme="sand"] .hero-stage {
-  --h-bg: transparent;
+  --h-bg: linear-gradient(140deg, #FDF9F3 0%, #EAE0D0 50%, #DDD2C0 100%);
   --h-text: #261A0E;
   --h-text-2: #6A4E36;
   --h-text-3: #9A7E68;
@@ -280,10 +285,10 @@ html[data-theme="sand"] .hero-stage {
   --h-badge-border: rgba(88, 60, 32, 0.11);
   --h-badge-text: #6A4E36;
   --h-chip-shadow: 0 1px 2px rgba(88, 60, 32, 0.06), 0 8px 20px -10px rgba(88, 60, 32, 0.16);
-  --h-shadow: 0 2px 4px rgba(88, 60, 32, 0.05), 0 16px 40px -14px rgba(88, 60, 32, 0.13), 0 56px 100px -36px rgba(88, 60, 32, 0.20), inset 0 1px 0 rgba(255, 255, 255, 0.92);
-  --h-ground: none;
-  --h-bloom: none;
-  --h-glow: none;
+  --h-shadow: 0 8px 30px rgba(88, 60, 32, 0.07), 0 30px 70px rgba(88, 60, 32, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  --h-ground: radial-gradient(ellipse at 50% 50%, rgba(88, 60, 32, 0.10) 0%, transparent 60%);
+  --h-bloom: radial-gradient(ellipse at 50% 50%, rgba(184, 82, 30, 0.05) 0%, transparent 65%);
+  --h-glow: radial-gradient(circle at 50% -20%, rgba(184, 82, 30, 0.08) 0%, rgba(136, 90, 48, 0.05) 50%, transparent 70%);
 }
 
 
@@ -297,9 +302,10 @@ html[data-theme="sage"] {
 
   --sq-canvas: #EFF2EE;
   /* Very light sage — barely green, mostly neutral */
-  --sq-section-surface: linear-gradient(to right, #E4E9E2 0%, #F5F8F5 50%, #E4E9E2 100%);
+  --sq-section-surface: linear-gradient(140deg, #F7F9F6 0%, #EFF2EE 100%);
   /* Sage-gray — real, calm step deeper */
-  --sq-section-surface-alt: linear-gradient(to right, #F5F8F5 0%, #EFF2EE 50%, #F5F8F5 100%);
+  --sq-section-surface-alt: linear-gradient(140deg, #EFF2EE 0%, #E4E9E2 100%);
+  --sq-section-surface-contrast: linear-gradient(140deg, #E4E9E2 0%, #CCD5C9 100%);
   /* Near-white with a breath of green */
   --sq-elevated: #F7F9F6;
   /* Clean sage-tinted white — panels feel cohesive & premium */
@@ -328,6 +334,7 @@ html[data-theme="sage"] {
   --color-primary-hover: #185534;
   --color-primary-active: #12452A;
   --color-primary-wash: rgba(30, 104, 64, 0.07);
+  --sq-primary-shadow: 30, 104, 64;
   --color-secondary: #485848;
   --color-accent: #1E6840;
   --color-success: #1E6840;
@@ -342,9 +349,9 @@ html[data-theme="sage"] {
   --color-disabled-text: #A8B4A8;
 
   /* Shadows — sage-dark toned */
-  --sq-card-shadow: 0 1px 2px rgba(36, 52, 36, 0.05), 0 8px 24px -14px rgba(36, 52, 36, 0.09);
-  --sq-card-shadow-hover: 0 4px 12px rgba(36, 52, 36, 0.07), 0 24px 52px -20px rgba(36, 52, 36, 0.15);
-  --sq-panel-shadow: 0 2px 8px rgba(36, 52, 36, 0.05), 0 40px 80px -44px rgba(36, 52, 36, 0.14);
+  --sq-card-shadow: 0 1px 3px rgba(36, 52, 36, 0.04), 0 8px 24px -12px rgba(36, 52, 36, 0.09), inset 0 1px 0 #ffffff;
+  --sq-card-shadow-hover: 0 12px 30px -10px rgba(36, 52, 36, 0.10), 0 24px 60px -20px rgba(36, 52, 36, 0.15), inset 0 1px 0 #ffffff;
+  --sq-panel-shadow: 0 4px 12px rgba(36, 52, 36, 0.05), 0 24px 60px -10px rgba(36, 52, 36, 0.12), inset 0 1px 0 #ffffff;
   --shadow-sm: 0 1px 2px rgba(36, 52, 36, 0.06);
   --shadow-md: 0 4px 12px rgba(36, 52, 36, 0.10);
   --shadow-lg: 0 12px 32px rgba(36, 52, 36, 0.14);
@@ -364,7 +371,8 @@ html[data-theme="sage"] {
   --sq-footer-border: rgba(255, 255, 255, 0.10);
   --sq-cta-grad: #0E1A0E;
 
-  --sq-card-bg: #F7F9F6;
+  /* Card background alias */
+  --sq-card-bg: linear-gradient(180deg, #F7F9F6 0%, #EBF0EA 100%);
 
   --card: #F7F9F6;
   --ink: #161E16;
@@ -393,7 +401,7 @@ html[data-theme="sage"] {
 
 /* Hero stage — Sage */
 html[data-theme="sage"] .hero-stage {
-  --h-bg: transparent;
+  --h-bg: linear-gradient(140deg, #F7F9F6 0%, #E4E9E2 50%, #CCD5C9 100%);
   --h-text: #161E16;
   --h-text-2: #485848;
   --h-text-3: #788878;
@@ -412,10 +420,10 @@ html[data-theme="sage"] .hero-stage {
   --h-badge-border: rgba(36, 52, 36, 0.09);
   --h-badge-text: #485848;
   --h-chip-shadow: 0 1px 2px rgba(36, 52, 36, 0.05), 0 8px 20px -10px rgba(36, 52, 36, 0.12);
-  --h-shadow: 0 2px 4px rgba(36, 52, 36, 0.04), 0 16px 40px -14px rgba(36, 52, 36, 0.10), 0 56px 100px -36px rgba(36, 52, 36, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.96);
-  --h-ground: none;
-  --h-bloom: none;
-  --h-glow: none;
+  --h-shadow: 0 8px 30px rgba(36, 52, 36, 0.06), 0 30px 70px rgba(36, 52, 36, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  --h-ground: radial-gradient(ellipse at 50% 50%, rgba(36, 52, 36, 0.08) 0%, transparent 60%);
+  --h-bloom: radial-gradient(ellipse at 50% 50%, rgba(30, 104, 64, 0.04) 0%, transparent 65%);
+  --h-glow: radial-gradient(circle at 50% -20%, rgba(30, 104, 64, 0.07) 0%, rgba(115, 135, 115, 0.04) 45%, transparent 70%);
 }
 
 
@@ -428,9 +436,10 @@ html[data-theme="lavender"] {
 
   --sq-canvas: #EDEAF5;
   /* Clear lavender mist — unmistakable identity */
-  --sq-section-surface: linear-gradient(to right, #E2DDF0 0%, #F5F3FA 50%, #E2DDF0 100%);
+  --sq-section-surface: linear-gradient(140deg, #F7F5FC 0%, #EDEAF5 100%);
   /* Plum-gray — real depth, real contrast */
-  --sq-section-surface-alt: linear-gradient(to right, #F5F3FA 0%, #EDEAF5 50%, #F5F3FA 100%);
+  --sq-section-surface-alt: linear-gradient(140deg, #EDEAF5 0%, #E2DDF0 100%);
+  --sq-section-surface-contrast: linear-gradient(140deg, #E2DDF0 0%, #D4CCE6 100%);
   /* Pearl lavender — lighter alternation */
   --sq-elevated: #F7F5FC;
   /* Clean lavender-tinted white — panels feel cohesive & premium */
@@ -462,6 +471,7 @@ html[data-theme="lavender"] {
   --color-primary-hover: #542DA8;
   --color-primary-active: #44248E;
   --color-primary-wash: rgba(100, 56, 194, 0.07);
+  --sq-primary-shadow: 100, 56, 194;
   --color-secondary: #56486C;
   --color-accent: #6438C2;
   --color-success: #2D7A56;
@@ -476,9 +486,9 @@ html[data-theme="lavender"] {
   --color-disabled-text: #B0A8C8;
 
   /* Shadows — plum-dark toned */
-  --sq-card-shadow: 0 1px 2px rgba(56, 40, 88, 0.05), 0 8px 24px -14px rgba(56, 40, 88, 0.10);
-  --sq-card-shadow-hover: 0 4px 12px rgba(56, 40, 88, 0.08), 0 24px 52px -20px rgba(56, 40, 88, 0.18);
-  --sq-panel-shadow: 0 2px 8px rgba(56, 40, 88, 0.05), 0 40px 80px -44px rgba(56, 40, 88, 0.18);
+  --sq-card-shadow: 0 1px 3px rgba(56, 40, 88, 0.04), 0 8px 24px -12px rgba(56, 40, 88, 0.09), inset 0 1px 0 #ffffff;
+  --sq-card-shadow-hover: 0 12px 30px -10px rgba(56, 40, 88, 0.10), 0 24px 60px -20px rgba(56, 40, 88, 0.15), inset 0 1px 0 #ffffff;
+  --sq-panel-shadow: 0 4px 12px rgba(56, 40, 88, 0.05), 0 24px 60px -10px rgba(56, 40, 88, 0.12), inset 0 1px 0 #ffffff;
   --shadow-sm: 0 1px 2px rgba(56, 40, 88, 0.06);
   --shadow-md: 0 4px 12px rgba(56, 40, 88, 0.10);
   --shadow-lg: 0 12px 32px rgba(56, 40, 88, 0.14);
@@ -498,7 +508,8 @@ html[data-theme="lavender"] {
   --sq-footer-border: rgba(255, 255, 255, 0.10);
   --sq-cta-grad: #16102A;
 
-  --sq-card-bg: #F7F5FC;
+  /* Card background alias */
+  --sq-card-bg: linear-gradient(180deg, #F7F5FC 0%, #EBE7F5 100%);
 
   --card: #F7F5FC;
   --ink: #1A1428;
@@ -513,7 +524,6 @@ html[data-theme="lavender"] {
   --mint: #2D7A56;
   --mint-deep: #2D7A56;
   --mint-wash: rgba(45, 122, 86, 0.10);
-
   --box-white-bg: #F7F5FC;
   --box-white-border: rgba(56, 40, 88, 0.09);
   --box-lilac-bg: #F5F3FA;
@@ -527,7 +537,7 @@ html[data-theme="lavender"] {
 
 /* Hero stage — Lavender */
 html[data-theme="lavender"] .hero-stage {
-  --h-bg: transparent;
+  --h-bg: linear-gradient(140deg, #F7F5FC 0%, #E2DDF0 50%, #C8BEDC 100%);
   --h-text: #1A1428;
   --h-text-2: #56486C;
   --h-text-3: #8A7EA6;
@@ -546,21 +556,20 @@ html[data-theme="lavender"] .hero-stage {
   --h-badge-border: rgba(56, 40, 88, 0.10);
   --h-badge-text: #56486C;
   --h-chip-shadow: 0 1px 2px rgba(56, 40, 88, 0.05), 0 8px 20px -10px rgba(56, 40, 88, 0.14);
-  --h-shadow: 0 2px 4px rgba(56, 40, 88, 0.04), 0 16px 40px -14px rgba(56, 40, 88, 0.12), 0 56px 100px -36px rgba(56, 40, 88, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.96);
-  --h-ground: none;
-  --h-bloom: none;
-  --h-glow: none;
+  --h-shadow: 0 8px 30px rgba(56, 40, 88, 0.07), 0 30px 70px rgba(56, 40, 88, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.96);
+  --h-ground: radial-gradient(ellipse at 50% 50%, rgba(56, 40, 88, 0.10) 0%, transparent 60%);
+  --h-bloom: radial-gradient(ellipse at 50% 50%, rgba(100, 56, 194, 0.05) 0%, transparent 65%);
+  --h-glow: radial-gradient(circle at 50% -20%, rgba(100, 56, 194, 0.08) 0%, rgba(45, 122, 86, 0.04) 45%, transparent 70%);
 }
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   PAGE CANVAS — flat surface color. No gradients. No overlays.
+   PAGE CANVAS — scrolling surface color. Gradients scroll naturally.
    Identity comes from surface temperature, not gradients.
    ══════════════════════════════════════════════════════════════════════════ */
 html[data-theme] body {
-  background: var(--sq-body-bg) !important;
-  background-attachment: fixed !important;
-  color: var(--color-text-primary);
+  background: var(--color-bg-base) !important;
+  color: var(--color-text-primary) !important;
 }
 
 /* Kill the page gradient pseudo-element from any legacy code */
@@ -570,48 +579,27 @@ html[data-theme] body::before {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   SECTION SURFACES — felt depth while scrolling, no hard edges
-   .sq-surface     → uses --sq-section-surface (primary alternation)
-   .sq-surface-alt → uses --sq-section-surface-alt (secondary alternation)
+   SECTION SURFACES — clear boundaries, flat distinct color surfaces
+   .sq-surface          → uses --sq-section-surface (primary alternation)
+   .sq-surface-alt      → uses --sq-section-surface-alt (secondary alternation)
+   .sq-surface-contrast → uses --sq-section-surface-contrast (contrast wash alternation)
    ══════════════════════════════════════════════════════════════════════════ */
 html[data-theme] .sq-surface {
-  position: relative;
-}
-
-html[data-theme] .sq-surface::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: var(--sq-section-surface);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
-}
-
-html[data-theme] .sq-surface>* {
-  position: relative;
-  z-index: 1;
+  background: var(--sq-section-surface) !important;
+  border-top: 1px solid var(--color-border) !important;
+  border-bottom: 1px solid var(--color-border) !important;
 }
 
 html[data-theme] .sq-surface-alt {
-  position: relative;
+  background: var(--sq-section-surface-alt) !important;
+  border-top: 1px solid var(--color-border) !important;
+  border-bottom: 1px solid var(--color-border) !important;
 }
 
-html[data-theme] .sq-surface-alt::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: var(--sq-section-surface-alt);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
-}
-
-html[data-theme] .sq-surface-alt>* {
-  position: relative;
-  z-index: 1;
+html[data-theme] .sq-surface-contrast {
+  background: var(--sq-section-surface-contrast) !important;
+  border-top: 1px solid var(--color-border) !important;
+  border-bottom: 1px solid var(--color-border) !important;
 }
 
 
@@ -619,7 +607,7 @@ html[data-theme] .sq-surface-alt>* {
    NAVBAR — floating glass pill, per-theme temperature
    ══════════════════════════════════════════════════════════════════════════ */
 html[data-theme] nav.sticky {
-  position: sticky;
+  position: relative !important;
   top: 14px;
   margin: 14px auto 0;
   max-width: 1180px;
@@ -629,7 +617,8 @@ html[data-theme] nav.sticky {
   -webkit-backdrop-filter: blur(24px) saturate(160%) !important;
   backdrop-filter: blur(24px) saturate(160%) !important;
   box-shadow: var(--sq-nav-shadow) !important;
-  transition: box-shadow 0.3s ease, background 0.3s ease;
+  transition: box-shadow 0.3s ease, background 0.3s ease, top 0.3s ease;
+  z-index: 160;
 }
 
 html[data-theme] nav.sticky>div {
@@ -639,7 +628,12 @@ html[data-theme] nav.sticky>div {
 }
 
 html[data-theme] nav.sq-nav-scrolled {
+  position: fixed !important;
   top: 8px;
+  left: 14px;
+  right: 14px;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 @media (max-width: 1210px) {
@@ -679,13 +673,14 @@ html[data-theme] .sq-cta {
 
 
 /* ══════════════════════════════════════════════════════════════════════════
-   HERO STAGE — no gradient overlays. Surface colors provide identity.
+   HERO STAGE — no gradient overlays. Ambient light provides identity & depth.
    ══════════════════════════════════════════════════════════════════════════ */
 html[data-theme] .hero-stage {
-  background-color: var(--h-bg);
+  background: var(--h-bg) !important;
+  position: relative;
 }
 
-/* Kill glow elements — identity must not rely on glow */
+/* Disable glow elements for ambient stage lighting to avoid muddy layouts */
 html[data-theme] .hero-glow {
   display: none !important;
 }
@@ -714,9 +709,10 @@ html[data-theme] .sq-card-hover:hover {
 
 html[data-theme] .sq-card-feature {
   background:
-    radial-gradient(140% 90% at 0% 0%, var(--color-primary-wash), transparent 50%),
-    var(--sq-card-bg, var(--color-bg-card));
-  border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+    radial-gradient(140% 90% at 0% 0%, var(--color-primary-wash), transparent 55%),
+    var(--sq-card-bg, var(--color-bg-card)) !important;
+  border-color: color-mix(in srgb, var(--color-primary) 38%, var(--color-border)) !important;
+  box-shadow: 0 4px 14px rgba(var(--sq-primary-shadow), 0.05), var(--sq-card-shadow) !important;
 }
 
 html[data-theme] .sq-panel {
@@ -823,7 +819,7 @@ html[data-theme] main#main .bg-white,
 html[data-theme] main#main div.bg-white,
 html[data-theme] main#main a.bg-white,
 html[data-theme] main#main button.bg-white {
-  background-color: var(--color-bg-card) !important;
+  background: var(--sq-card-bg, var(--color-bg-card)) !important;
   color: var(--color-text-primary) !important;
 }
 
@@ -971,7 +967,7 @@ html[data-theme] .sq-btn {
   border: 1px solid transparent;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html[data-theme] .sq-btn:focus-visible {
@@ -998,28 +994,43 @@ html[data-theme] .sq-btn-lg {
 }
 
 html[data-theme] .sq-btn-primary {
-  background: var(--color-primary);
-  color: #fff;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-hover) 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid color-mix(in srgb, var(--color-primary-active) 40%, transparent) !important;
+  box-shadow: 0 2px 4px rgba(var(--sq-primary-shadow), 0.12), 0 8px 20px -6px rgba(var(--sq-primary-shadow), 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
 }
 
 html[data-theme] .sq-btn-primary:hover {
-  background: var(--color-primary-hover);
+  background: linear-gradient(180deg, var(--color-primary-hover) 0%, var(--color-primary-active) 100%) !important;
+  box-shadow: none !important;
+  transform: translateY(-1.5px) !important;
 }
 
 html[data-theme] .sq-btn-primary:active {
-  background: var(--color-primary-active);
+  background: var(--color-primary-active) !important;
+  box-shadow: 0 1px 2px rgba(var(--sq-primary-shadow), 0.15), inset 0 1.5px 3px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(0) !important;
 }
 
 html[data-theme] .sq-btn-secondary {
-  background: transparent;
-  color: var(--color-text-primary);
-  border-color: var(--color-border);
+  background: var(--sq-elevated) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 
 html[data-theme] .sq-btn-secondary:hover {
-  background: var(--color-primary);
-  border-color: var(--color-primary);
-  color: #fff;
+  background: var(--color-bg-hover) !important;
+  border-color: var(--color-border-hover) !important;
+  color: var(--color-text-primary) !important;
+  box-shadow: none !important;
+  transform: translateY(-1px) !important;
+}
+
+html[data-theme] .sq-btn-secondary:active {
+  background: var(--color-hover-overlay) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), inset 0 1.5px 2px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(0) !important;
 }
 
 html[data-theme] .sq-btn-invert {

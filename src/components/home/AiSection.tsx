@@ -10,7 +10,7 @@ const points = [
 
 export default function AiSection() {
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface ai-light-section relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       {/* ambient glow behind the cards only */}
       <div aria-hidden className="absolute top-1/2 right-[2%] -translate-y-1/2 w-[420px] h-[420px] rounded-full pointer-events-none blur-[90px]" style={{ background: 'var(--color-primary-wash)' }} />
 

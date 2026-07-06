@@ -19,7 +19,7 @@ const features = [
 
 export default function PackedFeatures() {
   return (
-    <section className="sq-surface relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface packed-features-section relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 reveal">
         <SectionHead
           eyebrow="And there's more"

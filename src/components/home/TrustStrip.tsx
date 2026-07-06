@@ -71,11 +71,11 @@ export default function TrustStrip() {
         <div className="relative w-full overflow-hidden py-2 marquee-container">
           <div
             className="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, var(--sq-canvas), transparent)' }}
+            style={{ background: 'linear-gradient(to right, var(--color-bg-base), transparent)' }}
           />
           <div
             className="absolute inset-y-0 right-0 w-32 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, var(--sq-canvas), transparent)' }}
+            style={{ background: 'linear-gradient(to left, var(--color-bg-base), transparent)' }}
           />
           <div className="flex gap-14 animate-marquee whitespace-nowrap">
             {duplicatedLogos.map((logo, index) => (
@@ -90,23 +90,22 @@ export default function TrustStrip() {
           </div>
         </div>
 
-        {/* Ratings + compliance, one refined row */}
-        <div className="flex flex-wrap justify-center items-center gap-2.5 mt-10">
+        {/* Ratings + compliance, one refined flat row */}
+        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 mt-10 text-text-secondary">
           {ratings.map((r) => (
-            <span key={r.source} className="sq-card inline-flex items-center gap-2 rounded-full py-1.5 px-4 text-[0.84rem]">
+            <span key={r.source} className="inline-flex items-center gap-1.5 text-[0.84rem]">
               <span className="text-warning">★</span>
               <b className="font-heading text-text-primary font-bold">{r.score}</b>
-              <span className="text-text-secondary font-medium">{r.source}</span>
+              <span>{r.source}</span>
             </span>
           ))}
-          <span className="w-px h-5 mx-1 hidden sm:block" style={{ background: 'var(--color-border)' }} />
+          <span className="w-px h-4 hidden sm:block" style={{ background: 'var(--color-border)' }} />
           {badges.map((b) => (
             <span
               key={b.label}
-              className="inline-flex items-center gap-1.5 rounded-full py-1.5 px-3.5 text-[0.78rem] font-semibold font-heading text-primary"
-              style={{ background: 'var(--color-primary-wash)', border: '1px solid var(--color-primary-wash)' }}
+              className="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold font-heading text-text-secondary"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-[13px] h-[13px] text-text-muted">
                 {b.rect && <><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>}
                 {b.circle && <circle cx="12" cy="12" r="10" />}
                 {b.path && <path d={b.path} />}

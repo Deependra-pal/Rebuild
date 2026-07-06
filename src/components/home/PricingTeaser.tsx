@@ -3,7 +3,7 @@ import ArrowButton from '../shared/ArrowButton';
 
 export default function PricingTeaser() {
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface-alt relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 reveal">
         <div className="sq-panel relative overflow-hidden text-center px-8 py-16 md:px-16 md:py-20 flex flex-col items-center">
           {/* soft brand glow */}

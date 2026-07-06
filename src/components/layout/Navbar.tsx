@@ -57,14 +57,14 @@ export default function Navbar() {
 
   return (
     <>
-      <AnnouncementBar onLinkClick={handleLinkClick} />
+      <header className="absolute top-0 left-0 right-0 z-[160]">
+        <AnnouncementBar onLinkClick={handleLinkClick} />
 
-      <nav
-        ref={navbarRef}
-        className={`sq-nav sticky top-0 z-[160] transition-all duration-300 ${
-          isScrolled ? 'sq-nav-scrolled' : ''
-        }`}
-      >
+        <nav
+          ref={navbarRef}
+          className={`sq-nav sticky top-0 transition-all duration-300 ${isScrolled ? 'sq-nav-scrolled' : ''
+            }`}
+        >
         <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-3.5 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" onClick={handleLinkClick} className="sq-logo flex items-center shrink-0">
@@ -77,7 +77,7 @@ export default function Navbar() {
 
           {/* Desktop Nav links */}
           <div className="hidden lg:flex items-center gap-1.5 ml-4">
-            
+
             {/* Product Dropdown */}
             <div
               className="relative"
@@ -86,11 +86,10 @@ export default function Navbar() {
             >
               <button
                 onClick={(e) => handleMegaToggle('product', e)}
-                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${
-                  openMega === 'product' 
-                    ? 'bg-bg-hover text-text-primary' 
+                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${openMega === 'product'
+                    ? 'bg-bg-hover text-text-primary'
                     : 'bg-transparent text-text-secondary hover:bg-hover-overlay hover:text-text-primary'
-                }`}
+                  }`}
               >
                 Product
                 <svg
@@ -105,11 +104,10 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`absolute top-[calc(100%+8px)] left-0 w-[820px] bg-bg-card border border-border rounded-xl shadow-lg py-5 px-6 transition-all duration-200 z-[99] ${
-                  openMega === 'product'
+                className={`absolute top-[calc(100%+8px)] left-0 w-[820px] bg-bg-card border border-border rounded-xl shadow-lg py-5 px-6 transition-all duration-200 z-[99] ${openMega === 'product'
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-1.5 pointer-events-none'
-                }`}
+                  }`}
               >
                 {/* Hover Bridge */}
                 <div className="absolute -top-3 left-0 right-0 h-3 bg-transparent" />
@@ -202,25 +200,25 @@ export default function Navbar() {
                   <div>
                     <h6 className="font-heading font-extrabold text-[0.68rem] tracking-[0.1em] uppercase text-text-muted mb-2.5">Security & Trust</h6>
                     <div className="flex items-center gap-1.5">
-                      <img 
-                        src="/trusted-icons/Mask-group-5.webp" 
-                        alt="SOC 2" 
-                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      <img
+                        src="/trusted-icons/Mask-group-5.webp"
+                        alt="SOC 2"
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200"
                       />
-                      <img 
-                        src="/trusted-icons/Mask-group-6.webp" 
-                        alt="VPAT Compliance" 
-                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      <img
+                        src="/trusted-icons/Mask-group-6.webp"
+                        alt="VPAT Compliance"
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200"
                       />
-                      <img 
-                        src="/trusted-icons/Mask-group.webp" 
-                        alt="DPDP Act" 
-                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      <img
+                        src="/trusted-icons/Mask-group.webp"
+                        alt="DPDP Act"
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200"
                       />
-                      <img 
-                        src="/trusted-icons/Mask-group-1.webp" 
-                        alt="GDPR" 
-                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" 
+                      <img
+                        src="/trusted-icons/Mask-group-1.webp"
+                        alt="GDPR"
+                        className="w-[38px] h-[38px] object-contain grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -251,11 +249,10 @@ export default function Navbar() {
             >
               <button
                 onClick={(e) => handleMegaToggle('solutions', e)}
-                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${
-                  openMega === 'solutions' 
-                    ? 'bg-bg-hover text-text-primary' 
+                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${openMega === 'solutions'
+                    ? 'bg-bg-hover text-text-primary'
                     : 'bg-transparent text-text-secondary hover:bg-hover-overlay hover:text-text-primary'
-                }`}
+                  }`}
               >
                 Solutions
                 <svg
@@ -270,11 +267,10 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`absolute top-[calc(100%+8px)] left-0 w-[420px] bg-bg-card border border-border rounded-xl shadow-lg p-5 transition-all duration-200 z-[99] ${
-                  openMega === 'solutions'
+                className={`absolute top-[calc(100%+8px)] left-0 w-[420px] bg-bg-card border border-border rounded-xl shadow-lg p-5 transition-all duration-200 z-[99] ${openMega === 'solutions'
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-1.5 pointer-events-none'
-                }`}
+                  }`}
               >
                 {/* Hover Bridge */}
                 <div className="absolute -top-3 left-0 right-0 h-3 bg-transparent" />
@@ -320,11 +316,10 @@ export default function Navbar() {
             >
               <button
                 onClick={(e) => handleMegaToggle('compare', e)}
-                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${
-                  openMega === 'compare' 
-                    ? 'bg-bg-hover text-text-primary' 
+                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${openMega === 'compare'
+                    ? 'bg-bg-hover text-text-primary'
                     : 'bg-transparent text-text-secondary hover:bg-hover-overlay hover:text-text-primary'
-                }`}
+                  }`}
               >
                 Compare
                 <svg
@@ -339,11 +334,10 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`absolute top-[calc(100%+8px)] left-0 w-[200px] bg-bg-card border border-border rounded-xl shadow-lg p-4 transition-all duration-200 z-[99] ${
-                  openMega === 'compare'
+                className={`absolute top-[calc(100%+8px)] left-0 w-[200px] bg-bg-card border border-border rounded-xl shadow-lg p-4 transition-all duration-200 z-[99] ${openMega === 'compare'
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-1.5 pointer-events-none'
-                }`}
+                  }`}
               >
                 <div className="flex flex-col gap-1.5 text-left text-[0.82rem] text-text-secondary">
                   {['vs Slack', 'vs MS Teams', 'vs Flock', 'vs Zoom'].map((item) => (
@@ -363,11 +357,10 @@ export default function Navbar() {
             >
               <button
                 onClick={(e) => handleMegaToggle('resources', e)}
-                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${
-                  openMega === 'resources' 
-                    ? 'bg-bg-hover text-text-primary' 
+                className={`inline-flex items-center gap-1.5 py-1.5 px-3.5 rounded-full font-heading font-semibold text-[0.88rem] border-0 cursor-pointer transition-all ${openMega === 'resources'
+                    ? 'bg-bg-hover text-text-primary'
                     : 'bg-transparent text-text-secondary hover:bg-hover-overlay hover:text-text-primary'
-                }`}
+                  }`}
               >
                 Resources
                 <svg
@@ -382,11 +375,10 @@ export default function Navbar() {
               </button>
 
               <div
-                className={`absolute top-[calc(100%+8px)] left-0 w-[220px] bg-bg-card border border-border rounded-xl shadow-lg p-4 transition-all duration-200 z-[99] ${
-                  openMega === 'resources'
+                className={`absolute top-[calc(100%+8px)] left-0 w-[220px] bg-bg-card border border-border rounded-xl shadow-lg p-4 transition-all duration-200 z-[99] ${openMega === 'resources'
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible translate-y-1.5 pointer-events-none'
-                }`}
+                  }`}
               >
                 <div className="flex flex-col gap-1.5 text-left text-[0.82rem] text-text-secondary">
                   {[
@@ -416,7 +408,7 @@ export default function Navbar() {
             <Button href="/contact" onClick={handleLinkClick} variant="primary" size="sm" className="hidden sm:inline-flex">
               Start free
             </Button>
-            
+
             {/* Hamburger Button */}
             <button
               id="hamburger"
@@ -431,6 +423,7 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      </header>
 
       {/* Drawer */}
       <MobileNav isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} />

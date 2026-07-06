@@ -14,7 +14,7 @@ const tools = [
 
 export default function IntegrationsTeaser() {
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface-contrast integrations-teaser-section relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-16 items-center reveal">
         {/* copy */}
         <div className="flex flex-col text-left">

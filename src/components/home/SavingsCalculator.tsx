@@ -27,7 +27,7 @@ export default function SavingsCalculator() {
   const mint = 'var(--color-mint,#0CE59E)';
 
   return (
-    <section className="relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
+    <section className="sq-surface-alt relative px-6 md:px-8 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1200px] mx-auto relative z-10 reveal">
         <SectionHead
           eyebrow="See your savings"

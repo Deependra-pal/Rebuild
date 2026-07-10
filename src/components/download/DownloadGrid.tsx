@@ -48,8 +48,8 @@ export default function DownloadGrid() {
               </div>
 
               <div className="pt-6 border-t border-border/60">
-                <Button href="/contact" size="lg" variant="primary" className="!bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm hover:!shadow-focus">
-                  Open Squeako Web Client &rarr;
+                <Button href="/contact" size="lg" variant="primary" className="!bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm">
+                  Open Squeako Web Client <span className="sq-arrow">&rarr;</span>
                 </Button>
               </div>
             </div>

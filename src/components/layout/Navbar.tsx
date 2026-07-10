@@ -235,7 +235,7 @@ export default function Navbar() {
                 {/* Footer Link */}
                 <div className="text-left pl-1">
                   <Link href="/features" onClick={handleLinkClick} className="text-text-primary font-heading font-bold text-[0.84rem] hover:underline flex items-center gap-1.5">
-                    See all features &rarr;
+                    See all features <span className="sq-arrow">&rarr;</span>
                   </Link>
                 </div>
               </div>
@@ -416,9 +416,9 @@ export default function Navbar() {
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className="lg:hidden flex flex-col gap-[5px] bg-transparent border-0 cursor-pointer p-1.5 z-[201] focus:outline-none"
             >
-              <span className={`w-5.5 h-[2px] bg-text-primary rounded-full transition-transform duration-200 ${isMobileOpen ? 'translate-y-[7px] rotate-45' : ''}`}></span>
-              <span className={`w-5.5 h-[2px] bg-text-primary rounded-full transition-opacity duration-200 ${isMobileOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`w-5.5 h-[2px] bg-text-primary rounded-full transition-transform duration-200 ${isMobileOpen ? '-translate-y-[7px] -rotate-45' : ''}`}></span>
+              <span className={`w-5 h-[2px] bg-text-primary rounded-full transition-transform duration-200 ${isMobileOpen ? 'translate-y-[7px] rotate-45' : ''}`}></span>
+              <span className={`w-5 h-[2px] bg-text-primary rounded-full transition-opacity duration-200 ${isMobileOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-5 h-[2px] bg-text-primary rounded-full transition-transform duration-200 ${isMobileOpen ? '-translate-y-[7px] -rotate-45' : ''}`}></span>
             </button>
           </div>
         </div>

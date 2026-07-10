@@ -132,7 +132,7 @@ export default function PricingGrid() {
               </ul>
             </div>
             
-            <Button href="/contact" variant="primary" className="w-full mt-8 !bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm hover:!shadow-focus">
+            <Button href="/contact" variant="primary" className="w-full mt-8 !bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm">
               Start free trial
             </Button>
           </div>

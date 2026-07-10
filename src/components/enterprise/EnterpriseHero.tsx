@@ -21,7 +21,7 @@ export default function EnterpriseHero() {
           The security, administrative controls, and dedicated local support large organizations require — without losing the workspace simplicity your team enjoys.
         </p>
 
-        <Button href="/contact" size="lg" variant="primary" className="!bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-bg-base !shadow-sm hover:!shadow-focus">
+        <Button href="/contact" size="lg" variant="primary" className="!bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-bg-base !shadow-sm">
           Talk to sales
         </Button>
       </div>

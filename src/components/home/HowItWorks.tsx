@@ -113,41 +113,6 @@ export default function HowItWorks() {
               }, label);
             });
 
-          } else {
-            // Mobile: Simple scroll animation
-            const items = gsap.utils.toArray('.timeline-item') as HTMLElement[];
-            items.forEach((item) => {
-              const node = item.querySelector('.timeline-node');
-              const card = item.querySelector('.timeline-card');
-
-              if (!node || !card) return;
-
-              gsap.fromTo(node,
-                { scale: 0.5, opacity: 0 },
-                {
-                  scale: 1,
-                  opacity: 1,
-                  scrollTrigger: {
-                    trigger: item,
-                    start: 'top 85%',
-                    toggleActions: 'play none none none',
-                  }
-                }
-              );
-
-              gsap.fromTo(card,
-                { y: 30, opacity: 0 },
-                {
-                  y: 0,
-                  opacity: 1,
-                  scrollTrigger: {
-                    trigger: item,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
-                  }
-                }
-              );
-            });
           }
         }, sectionRef);
       });

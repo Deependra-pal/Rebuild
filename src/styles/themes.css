@@ -127,7 +127,7 @@ html[data-theme="ivory"] {
 
 /* Hero stage — Ivory */
 html[data-theme="ivory"] .hero-stage {
-  --h-bg: linear-gradient(140deg, #FFFFFF 0%, #F5F1E9 50%, #E6DFD3 100%);
+  --h-bg: radial-gradient(circle at 15% 20%, rgba(41, 82, 204, 0.06) 0%, transparent 50%), radial-gradient(circle at 85% 15%, rgba(26, 136, 85, 0.04) 0%, transparent 55%), var(--color-bg-base);
   --h-text: #1C1A16;
   --h-text-2: #56524C;
   --h-text-3: #8A867E;
@@ -266,7 +266,7 @@ html[data-theme="sand"] {
 
 /* Hero stage — Sand */
 html[data-theme="sand"] .hero-stage {
-  --h-bg: linear-gradient(140deg, #FDF9F3 0%, #EAE0D0 50%, #DDD2C0 100%);
+  --h-bg: radial-gradient(circle at 15% 20%, rgba(184, 82, 30, 0.06) 0%, transparent 50%), radial-gradient(circle at 85% 15%, rgba(58, 122, 82, 0.04) 0%, transparent 55%), var(--color-bg-base);
   --h-text: #261A0E;
   --h-text-2: #6A4E36;
   --h-text-3: #9A7E68;
@@ -401,7 +401,7 @@ html[data-theme="sage"] {
 
 /* Hero stage — Sage */
 html[data-theme="sage"] .hero-stage {
-  --h-bg: linear-gradient(140deg, #F7F9F6 0%, #E4E9E2 50%, #CCD5C9 100%);
+  --h-bg: radial-gradient(circle at 15% 20%, rgba(30, 104, 64, 0.06) 0%, transparent 50%), radial-gradient(circle at 85% 15%, rgba(30, 104, 64, 0.03) 0%, transparent 55%), var(--color-bg-base);
   --h-text: #161E16;
   --h-text-2: #485848;
   --h-text-3: #788878;
@@ -537,7 +537,7 @@ html[data-theme="lavender"] {
 
 /* Hero stage — Lavender */
 html[data-theme="lavender"] .hero-stage {
-  --h-bg: linear-gradient(140deg, #F7F5FC 0%, #E2DDF0 50%, #C8BEDC 100%);
+  --h-bg: radial-gradient(circle at 15% 20%, rgba(100, 56, 194, 0.06) 0%, transparent 50%), radial-gradient(circle at 85% 15%, rgba(45, 122, 86, 0.04) 0%, transparent 55%), var(--color-bg-base);
   --h-text: #1A1428;
   --h-text-2: #56486C;
   --h-text-3: #8A7EA6;
@@ -672,6 +672,12 @@ html[data-theme] .sq-cta {
 }
 
 
+/* Ensure all inner pages have comfortable top spacing to offset the floating navbar */
+html[data-theme] main#main > section:first-child:not(.hero-stage) {
+  padding-top: clamp(8rem, 11vw, 9.5rem) !important;
+}
+
+
 /* ══════════════════════════════════════════════════════════════════════════
    HERO STAGE — no gradient overlays. Ambient light provides identity & depth.
    ══════════════════════════════════════════════════════════════════════════ */
@@ -680,9 +686,33 @@ html[data-theme] .hero-stage {
   position: relative;
 }
 
-/* Disable glow elements for ambient stage lighting to avoid muddy layouts */
+/* Re-enable glow elements for premium ambient stage lighting (opacity 1 is controlled by gradient variables) */
 html[data-theme] .hero-glow {
-  display: none !important;
+  display: block !important;
+  background: var(--h-glow) !important;
+  opacity: 1 !important;
+}
+
+/* Concentric wireframe layout lines behind mockup */
+html[data-theme] .hero-glow::before {
+  content: '';
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  height: 760px;
+  background: repeating-radial-gradient(
+    circle,
+    transparent 0px,
+    transparent 59px,
+    var(--color-border) 60px,
+    var(--color-border) 61px
+  );
+  opacity: 0.35;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at 50% 50%, black 10%, transparent 65%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 10%, transparent 65%);
 }
 
 
@@ -963,7 +993,8 @@ html[data-theme] .sq-btn {
   font-family: var(--font-sora), sans-serif;
   font-weight: 600;
   letter-spacing: -0.006em;
-  border-radius: 9999px; /* Pill-shaped (fully rounded-full CTA) */
+  border-radius: 9999px;
+  /* Pill-shaped (fully rounded-full CTA) */
   border: 1px solid transparent;
   cursor: pointer;
   white-space: nowrap;
@@ -978,30 +1009,34 @@ html[data-theme] .sq-btn:focus-visible {
 html[data-theme] .sq-btn-sm {
   padding: 0.5rem 1.1rem;
   font-size: 0.85rem;
-  border-radius: 9999px; /* Pill-shaped */
+  border-radius: 9999px;
+  /* Pill-shaped */
 }
 
 html[data-theme] .sq-btn-md {
   padding: 0.7rem 1.5rem;
   font-size: 0.9rem;
-  border-radius: 9999px; /* Pill-shaped */
+  border-radius: 9999px;
+  /* Pill-shaped */
 }
 
 html[data-theme] .sq-btn-lg {
   padding: 0.9rem 1.9rem;
   font-size: 0.98rem;
-  border-radius: 9999px; /* Pill-shaped */
+  border-radius: 9999px;
+  /* Pill-shaped */
 }
 
 html[data-theme] .sq-btn-primary {
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-hover) 100%) !important;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-hover) 100%) !important;
   color: #ffffff !important;
-  border: 1px solid color-mix(in srgb, var(--color-primary-active) 40%, transparent) !important;
-  box-shadow: 0 2px 4px rgba(var(--sq-primary-shadow), 0.12), 0 8px 20px -6px rgba(var(--sq-primary-shadow), 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  border: 1px solid color-mix(in srgb, var(--color-primary-active) 30%, transparent) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 
 html[data-theme] .sq-btn-primary:hover {
-  background: linear-gradient(180deg, var(--color-primary-hover) 0%, var(--color-primary-active) 100%) !important;
+  background: linear-gradient(90deg, var(--color-primary-hover) 0%, var(--color-primary-active) 100%) !important;
+  border-color: transparent !important;
   box-shadow: none !important;
   transform: translateY(-1.5px) !important;
 }
@@ -1351,4 +1386,25 @@ html[data-theme-anim] *::after {
   html[data-theme-anim] *::after {
     transition: none !important;
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   PREMIUM ACCENT GRADIENTS (Attention-Style Text Gradients)
+   ══════════════════════════════════════════════════════════════════════════ */
+html[data-theme] .sq-text-gradient,
+html[data-theme] .hero-stage h1 span,
+html[data-theme] h2 span {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Premium CTA Button & Link Arrow Micro-interactions */
+html[data-theme] .sq-arrow {
+  display: inline-block;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+html[data-theme] .sq-btn:hover .sq-arrow,
+html[data-theme] a:hover .sq-arrow {
+  transform: translateX(4px) !important;
 }

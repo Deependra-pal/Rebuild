@@ -108,7 +108,7 @@ export default function ContactGrid() {
           </div>
 
           {/* Right Column: Premium Form Box */}
-          <div className="bg-bg-card border border-border rounded-xl p-6 lg:p-10 shadow-lg w-full text-left">
+          <div className="bg-bg-card border border-border rounded-xl p-6 lg:p-10 w-full text-left" style={{ boxShadow: 'var(--sq-card-shadow)' }}>
             {!submitted ? (
               <form id="leadForm" onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -207,8 +207,8 @@ export default function ContactGrid() {
                   ></textarea>
                 </div>
 
-                <Button type="submit" variant="primary" size="lg" className="w-full !bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm hover:!shadow-focus mt-2">
-                  Get Started &rarr;
+                <Button type="submit" variant="primary" size="lg" className="w-full !bg-primary hover:!bg-primary-hover active:!bg-primary-active !text-white !shadow-sm mt-2">
+                  Get Started <span className="sq-arrow">&rarr;</span>
                 </Button>
                 
                 <p className="text-center text-[0.74rem] text-text-secondary mt-2 font-body">

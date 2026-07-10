@@ -22,7 +22,7 @@ export default function SecurityTeaser() {
             AES 256-bit encryption in transit and at rest, local data residency in India, audit logging, admin access controls, and SSO integration support.
           </p>
           <Link href="/security" className="sq-btn sq-btn-secondary sq-btn-md self-start">
-            Read Security Protocol &rarr;
+            Read Security Protocol <span className="sq-arrow">&rarr;</span>
           </Link>
         </div>
 

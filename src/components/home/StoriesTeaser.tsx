@@ -42,7 +42,7 @@ export default function StoriesTeaser() {
                   <span className="text-[0.76rem] text-text-secondary block mt-0.5">{st.role}</span>
                 </div>
               </div>
-              <Link href="/stories" className="text-primary font-heading font-semibold text-[0.84rem] hover:underline">Read the story &rarr;</Link>
+              <Link href="/stories" className="text-primary font-heading font-semibold text-[0.84rem] hover:underline">Read the story <span className="sq-arrow">&rarr;</span></Link>
             </div>
           ))}
         </div>

@@ -23,7 +23,7 @@ export default function IntegrationsTeaser() {
             Works with the tools you already use
           </h2>
           <Link href="/integrations" className="sq-btn sq-btn-secondary sq-btn-md mt-2 self-start">
-            See all integrations &rarr;
+            See all integrations <span className="sq-arrow">&rarr;</span>
           </Link>
         </div>
 
